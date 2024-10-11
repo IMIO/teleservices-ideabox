@@ -1,60 +1,180 @@
 {
-  "roles": [
-    {
-      "name": "Administrateur IDEABOX",
-      "slug": "administrateur-ideabox",
-      "ou": {
-        "slug": "default"
-      }
-    },
-    {
-      "name": "API IDEABox",
-      "slug": "api-ideabox",
-      "ou": {
-        "slug": "default"
-      }
-    },
-    {
-      "name": "Debug",
-      "slug": "debug",
-      "ou": {
-        "slug": "default"
-      }
-    },
-    {
-      "name": "IDEABOX - Cr\\u00e9ation de campagne",
-      "slug": "ideabox-creation-de-campagne",
-      "ou": {
-        "slug": "default"
-      }
-    },
-    {
-      "name": "IDEABOX - Cr\\u00e9ation de projet",
-      "slug": "ideabox-creation-de-projet",
-      "ou": {
-        "slug": "default"
-      }
-    },
-    {
-      "name": "IDEABOX - Gestion de campagne",
-      "slug": "ideabox-gestion-de-campagne",
-      "ou": {
-        "slug": "default"
-      }
-    },
-    {
-      "name": "IDEABOX - Gestion de projet",
-      "slug": "ideabox-gestion-de-projet",
-      "ou": {
-        "slug": "default"
-      }
-    },
-    {
-      "name": "IDEABOX - Mod\\u00e9ration des commentaires",
-      "slug": "ideabox-moderation-des-commentaires",
-      "ou": {
-        "slug": "default"
-      }
-    }
-  ]
+    "roles": [
+        {
+            "uuid": "e675ef6940ad4cd4b49921b7860c2ee7",
+            "slug": "ideabox-gestion-de-projet",
+            "name": "IDEABOX - Gestion de projet",
+            "description": "",
+            "details": "",
+            "emails": [],
+            "emails_to_members": true,
+            "is_superuser": false,
+            "external_id": "",
+            "ou": {
+                "slug": "default",
+                "uuid": "c3ea4ee746f246c3be65901c925680d9",
+                "name": "Collectivit\u00e9 par d\u00e9faut"
+            },
+            "service": null
+        },
+        {
+            "uuid": "34574221a41a499d82fb708c6af9b891",
+            "slug": "ideabox-gestion-de-campagne",
+            "name": "IDEABOX - Gestion de campagne",
+            "description": "",
+            "details": "",
+            "emails": [],
+            "emails_to_members": true,
+            "is_superuser": false,
+            "external_id": "",
+            "ou": {
+                "slug": "default",
+                "uuid": "c3ea4ee746f246c3be65901c925680d9",
+                "name": "Collectivit\u00e9 par d\u00e9faut"
+            },
+            "service": null
+        },
+        {
+            "uuid": "48c71f9617da47499b9fbad2ae358646",
+            "slug": "ideabox-moderation-des-commentaires",
+            "name": "IDEABOX - Mod\u00e9ration des commentaires",
+            "description": "",
+            "details": "",
+            "emails": [],
+            "emails_to_members": true,
+            "is_superuser": false,
+            "external_id": "",
+            "ou": {
+                "slug": "default",
+                "uuid": "c3ea4ee746f246c3be65901c925680d9",
+                "name": "Collectivit\u00e9 par d\u00e9faut"
+            },
+            "service": null
+        },
+        {
+            "uuid": "5395718e4a774a2c86ad0cbe48919d60",
+            "slug": "ideabox-creation-de-campagne",
+            "name": "IDEABOX - Cr\u00e9ation de campagne",
+            "description": "",
+            "details": "",
+            "emails": [],
+            "emails_to_members": true,
+            "is_superuser": false,
+            "external_id": "",
+            "ou": {
+                "slug": "default",
+                "uuid": "c3ea4ee746f246c3be65901c925680d9",
+                "name": "Collectivit\u00e9 par d\u00e9faut"
+            },
+            "service": null
+        },
+        {
+            "uuid": "b4f55157e7214d6ebbbd18c2adfb0bbb",
+            "slug": "administrateur-ideabox",
+            "name": "Administrateur IDEABOX",
+            "description": "",
+            "details": "",
+            "emails": [],
+            "emails_to_members": true,
+            "is_superuser": false,
+            "external_id": "",
+            "ou": {
+                "slug": "default",
+                "uuid": "c3ea4ee746f246c3be65901c925680d9",
+                "name": "Collectivit\u00e9 par d\u00e9faut"
+            },
+            "service": null,
+            "parents": [
+                {
+                    "service": null,
+                    "uuid": "34574221a41a499d82fb708c6af9b891",
+                    "ou": {
+                        "slug": "default",
+                        "uuid": "c3ea4ee746f246c3be65901c925680d9",
+                        "name": "Collectivit\u00e9 par d\u00e9faut"
+                    },
+                    "slug": "ideabox-gestion-de-campagne",
+                    "name": "IDEABOX - Gestion de campagne"
+                },
+                {
+                    "service": null,
+                    "uuid": "5395718e4a774a2c86ad0cbe48919d60",
+                    "ou": {
+                        "slug": "default",
+                        "uuid": "c3ea4ee746f246c3be65901c925680d9",
+                        "name": "Collectivit\u00e9 par d\u00e9faut"
+                    },
+                    "slug": "ideabox-creation-de-campagne",
+                    "name": "IDEABOX - Cr\u00e9ation de campagne"
+                },
+                {
+                    "service": null,
+                    "uuid": "e675ef6940ad4cd4b49921b7860c2ee7",
+                    "ou": {
+                        "slug": "default",
+                        "uuid": "c3ea4ee746f246c3be65901c925680d9",
+                        "name": "Collectivit\u00e9 par d\u00e9faut"
+                    },
+                    "slug": "ideabox-gestion-de-projet",
+                    "name": "IDEABOX - Gestion de projet"
+                },
+                {
+                    "service": null,
+                    "uuid": "953f23b16aac45428058c5e50214ad96",
+                    "ou": {
+                        "slug": "default",
+                        "uuid": "c3ea4ee746f246c3be65901c925680d9",
+                        "name": "Collectivit\u00e9 par d\u00e9faut"
+                    },
+                    "slug": "ideabox-creation-de-projet",
+                    "name": "IDEABOX - Cr\u00e9ation de projet"
+                },
+                {
+                    "service": null,
+                    "uuid": "48c71f9617da47499b9fbad2ae358646",
+                    "ou": {
+                        "slug": "default",
+                        "uuid": "c3ea4ee746f246c3be65901c925680d9",
+                        "name": "Collectivit\u00e9 par d\u00e9faut"
+                    },
+                    "slug": "ideabox-moderation-des-commentaires",
+                    "name": "IDEABOX - Mod\u00e9ration des commentaires"
+                }
+            ]
+        },
+        {
+            "uuid": "c2ce2ec872814abb99e5e24a02b1e31c",
+            "slug": "api-ideabox",
+            "name": "API IDEABox",
+            "description": "",
+            "details": "",
+            "emails": [],
+            "emails_to_members": true,
+            "is_superuser": false,
+            "external_id": "",
+            "ou": {
+                "slug": "default",
+                "uuid": "c3ea4ee746f246c3be65901c925680d9",
+                "name": "Collectivit\u00e9 par d\u00e9faut"
+            },
+            "service": null
+        },
+        {
+            "uuid": "953f23b16aac45428058c5e50214ad96",
+            "slug": "ideabox-creation-de-projet",
+            "name": "IDEABOX - Cr\u00e9ation de projet",
+            "description": "",
+            "details": "",
+            "emails": [],
+            "emails_to_members": true,
+            "is_superuser": false,
+            "external_id": "",
+            "ou": {
+                "slug": "default",
+                "uuid": "c3ea4ee746f246c3be65901c925680d9",
+                "name": "Collectivit\u00e9 par d\u00e9faut"
+            },
+            "service": null
+        }
+    ]
 }
