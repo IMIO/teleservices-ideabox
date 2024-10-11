@@ -1,0 +1,43 @@
+<workflow id="49">
+  <name>iMio - IDEABOX - Commentaire</name>
+  <slug>imio-ideabox-commentaire</slug>
+  <category slug="ideabox" category_id="2">IDEABox</category>
+  <roles>
+    <role id="_api">API</role>
+    <role id="_editor">&#201;diteur</role>
+    <role id="_gestion-des-commentaire">Gestion des commentaires</role>
+    <role id="_viewer">Visualisateur</role>
+  </roles>
+  <possible_status>
+    <status>
+      <id>recorded</id>
+      <name>Enregistr&#233;e</name>
+      <colour>#FFFFFF</colour>
+      <visibility />
+      <items>
+        <item type="editable" id="1">
+          <by>
+            <item role_id="_editor">_editor</item>
+          </by>
+          <status>recorded</status>
+          <label>Modifier la fiche</label>
+          <operation_mode>full</operation_mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="form" id="4">
+          <by>
+            <item role_id="_gestion-des-commentaire">_gestion-des-commentaire</item>
+          </by>
+          <varname>motif</varname>
+          <hide_submit_button>True</hide_submit_button>
+          <formdef>
+            <name>-</name>
+            <fields>
+              <field>
+                <type>text</type>
+                <label type="str">Motif du refus</label>
+                <required type="bool">True</required>
+                <hint type="str">&lt;p&gt;&#192; compl&#233;ter si refus du commentaire.&lt;/p&gt;</hint>
+                <varname type="str">refus</varname>
+                <display_locations />
+            

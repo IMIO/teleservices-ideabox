@@ -1,0 +1,21 @@
+<workflow id="51">
+  <name>iMio - IDEABOX - Cr&#233;er Campagne</name>
+  <slug>imio-ideabox-creer-campagne</slug>
+  <category slug="ideabox" category_id="2">IDEABox</category>
+  <roles>
+    <role id="_receiver">Destinataire</role>
+  </roles>
+  <possible_status>
+    <status>
+      <id>1</id>
+      <name>Juste envoy&#233;</name>
+      <colour>#ffffff</colour>
+      <visibility>
+        <role>__restricted__</role>
+      </visibility>
+      <items>
+        <item type="jump" id="1">
+          <status>2</status>
+          <mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        

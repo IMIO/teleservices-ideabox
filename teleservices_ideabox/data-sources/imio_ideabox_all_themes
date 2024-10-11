@@ -1,0 +1,6 @@
+<datasource id="45">
+  <name>iMio - IDEABOX - All Themes</name>
+  <slug>imio_ideabox_all_themes</slug>
+  <data_source>
+    <type>json</type>
+    <value>{{ eservices_url }}api/cards/imio-ideabox-theme/list</value

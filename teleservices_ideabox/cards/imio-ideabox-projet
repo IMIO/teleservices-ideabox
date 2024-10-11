@@ -1,0 +1,71 @@
+<carddef id="16">
+  <name>iMio - IDEABOX - Projet</name>
+  <url_name>imio-ideabox-projet</url_name>
+  <submission_user_association>none</submission_user_association>
+  <discussion>false</discussion>
+  <detailed_emails>true</detailed_emails>
+  <disabled>false</disabled>
+  <only_allow_one>false</only_allow_one>
+  <enable_tracking_codes>false</enable_tracking_codes>
+  <confirmation>false</confirmation>
+  <always_advertise>false</always_advertise>
+  <has_captcha>false</has_captcha>
+  <skip_from_360_view>false</skip_from_360_view>
+  <category slug="ideabox" category_id="1">IDEABox</category>
+  <workflow slug="imio-ideabox-projet" workflow_id="48">iMio - IDEABOX - Projet</workflow>
+  <fields>
+    <field>
+      <type>subtitle</type>
+      <label type="str">Identification du projet</label>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <id type="str">c91a42df-cc81-4f3b-a6c2-778bcda948b0</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Nom</label>
+      <required type="bool">True</required>
+      <varname type="str">nom</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+        <item>listings</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <id type="str">e9967881-b8b5-475c-b08e-32f734f9de0b</id>
+    </field>
+    <field>
+      <type>text</type>
+      <label type="str">Description</label>
+      <required type="bool">True</required>
+      <varname type="str">description</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <display_mode type="str">rich</display_mode>
+      <id type="str">e9020ac5-e0fa-499e-8234-b19c0f77d484</id>
+    </field>
+    <field>
+      <type>items</type>
+      <label type="str">Th&#232;mes</label>
+      <required type="bool">True</required>
+      <varname type="str">themes</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <display_mode type="str">checkboxes</display_mode>
+      <min_choices type="int">0</min_choices>
+      <max_choices type="int">0</max_choices>
+      <data_source>
+        <type>carddef:imio-ideabox-theme</type>
+      </data_source>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size t

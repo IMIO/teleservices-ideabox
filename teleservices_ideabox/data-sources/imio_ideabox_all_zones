@@ -1,0 +1,6 @@
+<datasource id="46">
+  <name>iMio - IDEABOX - All Zones</name>
+  <slug>imio_ideabox_all_zones</slug>
+  <data_source>
+    <type>json</type>
+    <value>{{ eservices_url }}api/cards/imio-ideabox-zone/list</value>

@@ -1,0 +1,27 @@
+<formdef id="88">
+  <name>Cr&#233;er une Campagne</name>
+  <url_name>ideabox-creer-une-campagne</url_name>
+  <submission_user_association>none</submission_user_association>
+  <discussion>false</discussion>
+  <detailed_emails>true</detailed_emails>
+  <disabled>false</disabled>
+  <only_allow_one>false</only_allow_one>
+  <enable_tracking_codes>false</enable_tracking_codes>
+  <confirmation>false</confirmation>
+  <always_advertise>false</always_advertise>
+  <has_captcha>false</has_captcha>
+  <skip_from_360_view>false</skip_from_360_view>
+  <category slug="ideabox" category_id="14">IDEABox</category>
+  <workflow slug="imio-ideabox-creer-campagne" workflow_id="51">iMio - IDEABOX - Cr&#233;er Campagne</workflow>
+  <fields>
+    <field>
+      <type>string</type>
+      <label type="str">Intitul&#233; de la campagne</label>
+      <required type="bool">True</required>
+      <varname type="str">titre</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+        <item>listings</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
