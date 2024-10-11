@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<workflow id="53" url="">
+  <name>iMio - IDEABOX - Vote pour</name>
+  <slug>imio-ideabox-vote-pour</slug>
+  <category slug="ideabox" category_id="2">IDEABox</category>
+  <roles>
+    <role id="_receiver">Destinataire</role>
+  </roles>
+  <possible_status>
+    <status>
+      <id>1</id>
+      <name>Juste envoy&#233;</name>
+      <colour>#ffffff</colour>
+      <visibility>
+        <role>__restricted__</role>
+      </visibility>
+      <items>
+        <item type="jump" id="1">
+          <status>2</status>
+          <mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>2</id>
+      <name>Comptabilisation du vote</name>
+      <colour>#0099ff</colour>
+      <visibility />
+      <items>
+        <item type="create_carddata" id="2">
+          <action_label>Vote Pour</action_label>
+          <formdef_slug>imio-ideabox-vote</formdef_slug>
+          <map_fields_by_varname>False</map_fields_by_varname>
+          <mappings>
+            <mapping field_id="46136d2f-55cb-44bd-93c7-2b24f4933b91">{{ form_var_projet }}</mapping>
+            <mapping field_id="f38c2895-972c-4969-a124-e9552fa4bb34">{{ form_var_projet_campagne }}</mapping>
+            <mapping field_id="6934adf2-b3b5-4d35-ba00-a524529723e9">{{ True }}</mapping>
+          </mappings>
+          <user_association_mode>keep-user</user_association_mode>
+        </item>
+        <item type="jump" id="1">
+          <status>3</status>
+          <mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>3</id>
+      <name>Vote comptabilis&#233;</name>
+      <colour>#57e389</colour>
+      <visibility />
+      <items />
+    </status>
+  </possible_status>
+</workflow>

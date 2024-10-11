@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<carddef id="20" url="">
+  <name>iMio - IDEABOX - Zone</name>
+  <url_name>imio-ideabox-zone</url_name>
+  <submission_user_association>none</submission_user_association>
+  <discussion>false</discussion>
+  <detailed_emails>true</detailed_emails>
+  <disabled>false</disabled>
+  <only_allow_one>false</only_allow_one>
+  <enable_tracking_codes>false</enable_tracking_codes>
+  <confirmation>false</confirmation>
+  <always_advertise>false</always_advertise>
+  <has_captcha>false</has_captcha>
+  <skip_from_360_view>false</skip_from_360_view>
+  <category slug="ideabox" category_id="1">IDEABox</category>
+  <workflow slug="_carddef_default" workflow_id="_carddef_default">Par d&#233;faut (fiches)</workflow>
+  <fields>
+    <field>
+      <type>string</type>
+      <label type="str">Nom de la zone</label>
+      <required type="bool">True</required>
+      <varname type="str">nom</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+        <item>listings</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <id type="str">964608ee-c7fc-4090-84f6-98142d138165</id>
+    </field>
+  </fields>
+  <user-roles>
+    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</role>
+  </user-roles>
+  <backoffice-submission-roles>
+    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</role>
+  </backoffice-submission-roles>
+  <roles>
+    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a" role_key="_editor">Debug</role>
+    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a" role_key="_viewer">Debug</role>
+  </roles>
+  <options />
+  <custom_views />
+  <geolocations />
+  <management_sidebar_items>
+    <item>__default__</item>
+  </management_sidebar_items>
+  <digest_templates>
+    <template key="default">{{ form_var_nom }}</template>
+  </digest_templates>
+</carddef>

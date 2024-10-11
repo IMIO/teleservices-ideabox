@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<carddef id="21" url="">
+  <name>iMio - IDEABOX - Campagne</name>
+  <url_name>imio-ideabox-campagne</url_name>
+  <submission_user_association>none</submission_user_association>
+  <discussion>false</discussion>
+  <detailed_emails>true</detailed_emails>
+  <disabled>false</disabled>
+  <only_allow_one>false</only_allow_one>
+  <enable_tracking_codes>false</enable_tracking_codes>
+  <confirmation>false</confirmation>
+  <always_advertise>false</always_advertise>
+  <has_captcha>false</has_captcha>
+  <skip_from_360_view>false</skip_from_360_view>
+  <category slug="ideabox" category_id="1">IDEABox</category>
+  <workflow slug="imio-ideabox-campagne" workflow_id="50">iMio - IDEABOX - Campagne</workflow>
+  <fields>
+    <field>
+      <type>string</type>
+      <label type="str">Intitul&#233; de la campagne</label>
+      <required type="bool">True</required>
+      <varname type="str">titre</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+        <item>listings</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <id type="str">044b212e-4604-444d-aa72-f2f8ea243323</id>
+    </field>
+    <field>
+      <type>text</type>
+      <label type="str">Description</label>
+      <required type="bool">False</required>
+      <varname type="str">description</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <display_mode type="str">rich</display_mode>
+      <id type="str">978f37a0-c9cd-4a38-9900-22919fcfa3cc</id>
+    </field>
+    <field>
+      <type>date</type>
+      <label type="str">D&#233;but</label>
+      <required type="bool">False</required>
+      <varname type="str">debut</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+        <item>listings</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <minimum_is_future type="bool">False</minimum_is_future>
+      <date_in_the_past type="bool">False</date_in_the_past>
+      <date_can_be_today type="bool">False</date_can_be_today>
+      <id type="str">59e65528-024d-4787-b7c4-01184023a5b3</id>
+    </field>
+    <field>
+      <type>date</type>
+      <label type="str">Fin</label>
+      <required type="bool">False</required>
+      <varname type="str">fin</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+        <item>listings</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <minimum_is_future type="bool">False</minimum_is_future>
+      <date_in_the_past type="bool">False</date_in_the_past>
+      <date_can_be_today type="bool">False</date_can_be_today>
+      <id type="str">22e1355d-3e5a-470e-9370-4e649d5c1d88</id>
+    </field>
+    <field>
+      <type>items</type>
+      <label type="str">Th&#232;mes</label>
+      <required type="bool">False</required>
+      <hint type="str">&lt;p&gt;Si aucun th&#232;me s&#233;lectionn&#233;, ils seront &lt;strong&gt;tous&lt;/strong&gt; propos&#233;s.&lt;/p&gt;</hint>
+      <varname type="str">themes</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <display_mode type="str">checkboxes</display_mode>
+      <min_choices type="int">0</min_choices>
+      <max_choices type="int">0</max_choices>
+      <data_source>
+        <type>carddef:imio-ideabox-theme</type>
+      </data_source>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">71d8eff8-d6d4-4811-a96c-795d1e1d8cc7</id>
+    </field>
+    <field>
+      <type>items</type>
+      <label type="str">Zones</label>
+      <required type="bool">False</required>
+      <hint type="str">&lt;p&gt;Si aucune zone s&#233;lectionn&#233;e, elles seront toutes propos&#233;es.&lt;/p&gt;</hint>
+      <varname type="str">zones</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <display_mode type="str">checkboxes</display_mode>
+      <min_choices type="int">0</min_choices>
+      <max_choices type="int">0</max_choices>
+      <data_source>
+        <type>carddef:imio-ideabox-zone</type>
+      </data_source>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">6dc7d2a5-69e9-42c0-a836-5115eb84bbd7</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Nombre de vote autoris&#233;</label>
+      <required type="bool">False</required>
+      <varname type="str">nombre_vote_autorise</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+        <item>listings</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <validation>
+        <type>digits</type>
+      </validation>
+      <id type="str">0a7d87bc-8d57-435c-8222-236ffed24f63</id>
+    </field>
+  </fields>
+  <user-roles>
+    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</role>
+  </user-roles>
+  <backoffice-submission-roles>
+    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</role>
+  </backoffice-submission-roles>
+  <roles>
+    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a" role_key="_editor">Debug</role>
+    <role slug="api-ideabox" role_id="c2ce2ec872814abb99e5e24a02b1e31c" role_key="_api">API IDEABox</role>
+  </roles>
+  <options />
+  <custom_views>
+    <custom_view>
+      <title>Active</title>
+      <slug>active</slug>
+      <visibility>datasource</visibility>
+      <filters>
+        <filter>0</filter>
+        <filter-operator>eq</filter-operator>
+        <filter-status>on</filter-status>
+      </filters>
+      <is_default>False</is_default>
+      <columns>
+        <id>id</id>
+        <id>time</id>
+        <id>044b212e-4604-444d-aa72-f2f8ea243323</id>
+        <id>59e65528-024d-4787-b7c4-01184023a5b3</id>
+        <id>22e1355d-3e5a-470e-9370-4e649d5c1d88</id>
+        <id>status</id>
+      </columns>
+    </custom_view>
+    <custom_view>
+      <title>Par d&#233;faut</title>
+      <slug>par-defaut</slug>
+      <visibility>any</visibility>
+      <filters>
+        <filter>pending</filter>
+        <filter-operator>eq</filter-operator>
+        <filter-status>on</filter-status>
+      </filters>
+      <is_default>True</is_default>
+      <columns>
+        <id>id</id>
+        <id>time</id>
+        <id>044b212e-4604-444d-aa72-f2f8ea243323</id>
+        <id>59e65528-024d-4787-b7c4-01184023a5b3</id>
+        <id>22e1355d-3e5a-470e-9370-4e649d5c1d88</id>
+        <id>status</id>
+      </columns>
+    </custom_view>
+  </custom_views>
+  <geolocations />
+  <management_sidebar_items>
+    <item>__default__</item>
+  </management_sidebar_items>
+  <digest_templates>
+    <template key="custom-view:active">{{ form_var_titre }}</template>
+    <template key="custom-view:par-defaut">{{ form_var_titre }}</template>
+    <template key="default">{{ form_var_titre }}</template>
+  </digest_templates>
+  <workflow-migrations>
+    <migration old-workflow="_carddef_default" new-workflow="imio-ideabox-campagne" timestamp="2024-10-08T11:03:38.211477+02:00">
+      <timestamp>2024-10-08T11:03:38.211477+02:00</timestamp>
+      <status-mapping>
+        <map old="recorded" new="recorded" />
+        <map old="deleted" new="deleted" />
+      </status-mapping>
+    </migration>
+  </workflow-migrations>
+</carddef>

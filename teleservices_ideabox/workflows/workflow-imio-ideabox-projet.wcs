@@ -1,0 +1,463 @@
+<?xml version="1.0"?>
+<workflow id="48" url="">
+  <name>iMio - IDEABOX - Projet</name>
+  <slug>imio-ideabox-projet</slug>
+  <category slug="ideabox" category_id="2">IDEABox</category>
+  <roles>
+    <role id="_api">API</role>
+    <role id="_editor">&#201;diteur</role>
+    <role id="_gestion-des-projets">Gestion de projet</role>
+    <role id="_viewer">Visualisateur</role>
+  </roles>
+  <possible_status>
+    <status>
+      <id>recorded</id>
+      <name>Enregistr&#233;e</name>
+      <colour>#FFFFFF</colour>
+      <visibility />
+      <items>
+        <item type="editable" id="1">
+          <by>
+            <item role_id="_editor">_editor</item>
+          </by>
+          <status>recorded</status>
+          <label>Modifier la fiche</label>
+          <operation_mode>full</operation_mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>0</id>
+      <name>Refus&#233;</name>
+      <colour>#ef2929</colour>
+      <visibility />
+      <items>
+        <item type="webservice_call" id="1">
+          <method>POST</method>
+          <url>{{form_parent_form_url}}/jump/trigger/project_bounced/</url>
+          <post>False</post>
+          <response_type>json</response_type>
+          <store_all_responses>False</store_all_responses>
+          <attach_file_to_history>True</attach_file_to_history>
+          <action_on_app_error>:pass</action_on_app_error>
+          <action_on_4xx>:stop</action_on_4xx>
+          <action_on_5xx>:stop</action_on_5xx>
+          <action_on_bad_data>:pass</action_on_bad_data>
+          <action_on_network_errors>:stop</action_on_network_errors>
+          <record_errors>False</record_errors>
+          <record_on_errors>True</record_on_errors>
+          <notify_on_errors>False</notify_on_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>1</id>
+      <name>Accept&#233;</name>
+      <colour>#57e389</colour>
+      <visibility />
+      <items>
+        <item type="webservice_call" id="1">
+          <method>POST</method>
+          <url>{{form_parent_form_url}}/jump/trigger/project_accepted/</url>
+          <post>False</post>
+          <response_type>json</response_type>
+          <store_all_responses>False</store_all_responses>
+          <attach_file_to_history>True</attach_file_to_history>
+          <action_on_app_error>:pass</action_on_app_error>
+          <action_on_4xx>:stop</action_on_4xx>
+          <action_on_5xx>:stop</action_on_5xx>
+          <action_on_bad_data>:pass</action_on_bad_data>
+          <action_on_network_errors>:stop</action_on_network_errors>
+          <record_errors>False</record_errors>
+          <record_on_errors>True</record_on_errors>
+          <notify_on_errors>False</notify_on_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>2</id>
+      <name>Publi&#233;</name>
+      <colour>#f9f06b</colour>
+      <visibility />
+      <items />
+    </status>
+    <status>
+      <id>3</id>
+      <name>Vote</name>
+      <colour>#0099ff</colour>
+      <visibility />
+      <items />
+    </status>
+    <status>
+      <id>4</id>
+      <name>Cl&#244;ture</name>
+      <colour>#c0bfbc</colour>
+      <visibility />
+      <items />
+    </status>
+    <status>
+      <id>5</id>
+      <name>Retenu</name>
+      <colour>#f5c211</colour>
+      <visibility />
+      <items>
+        <item type="webservice_call" id="1">
+          <method>POST</method>
+          <url>{{form_parent_form_url}}/jump/trigger/project_validated/</url>
+          <post>False</post>
+          <response_type>json</response_type>
+          <store_all_responses>False</store_all_responses>
+          <attach_file_to_history>True</attach_file_to_history>
+          <action_on_app_error>:pass</action_on_app_error>
+          <action_on_4xx>:stop</action_on_4xx>
+          <action_on_5xx>:stop</action_on_5xx>
+          <action_on_bad_data>:pass</action_on_bad_data>
+          <action_on_network_errors>:stop</action_on_network_errors>
+          <record_errors>False</record_errors>
+          <record_on_errors>True</record_on_errors>
+          <notify_on_errors>False</notify_on_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>6</id>
+      <name>Rejet&#233;</name>
+      <colour>#000000</colour>
+      <visibility />
+      <items>
+        <item type="webservice_call" id="1">
+          <method>POST</method>
+          <url>{{form_parent_form_url}}/jump/trigger/project_rejected/</url>
+          <post>False</post>
+          <response_type>json</response_type>
+          <store_all_responses>False</store_all_responses>
+          <attach_file_to_history>True</attach_file_to_history>
+          <action_on_app_error>:pass</action_on_app_error>
+          <action_on_4xx>:stop</action_on_4xx>
+          <action_on_5xx>:stop</action_on_5xx>
+          <action_on_bad_data>:pass</action_on_bad_data>
+          <action_on_network_errors>:stop</action_on_network_errors>
+          <record_errors>False</record_errors>
+          <record_on_errors>True</record_on_errors>
+          <notify_on_errors>False</notify_on_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+  </possible_status>
+  <global_actions>
+    <action>
+      <id>1</id>
+      <name>Refuser</name>
+      <items>
+        <item type="jump" id="1">
+          <status>0</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="0f153c6e-12b8-450f-9d77-9a1f23490ef1">
+          <roles>
+            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
+          </roles>
+          <statuses>
+            <statuse>recorded</statuse>
+            <statuse>1</statuse>
+          </statuses>
+          <allow_as_mass_action>True</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>2</id>
+      <name>Accepter</name>
+      <items>
+        <item type="jump" id="1">
+          <status>1</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="976d4c32-9481-4966-a612-8b568e2713b4">
+          <roles>
+            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
+          </roles>
+          <statuses>
+            <statuse>recorded</statuse>
+            <statuse>0</statuse>
+          </statuses>
+          <allow_as_mass_action>True</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>3</id>
+      <name>Publier</name>
+      <items>
+        <item type="jump" id="1">
+          <status>2</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="2bf29e27-d8b7-4514-851c-3604ac34ba21">
+          <roles>
+            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
+          </roles>
+          <statuses>
+            <statuse>1</statuse>
+          </statuses>
+          <allow_as_mass_action>True</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>4</id>
+      <name>Proposer aux votes</name>
+      <items>
+        <item type="jump" id="1">
+          <status>3</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="12d8ae88-55ce-483e-bebd-b1fba825ca54">
+          <roles>
+            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
+          </roles>
+          <statuses>
+            <statuse>2</statuse>
+          </statuses>
+          <allow_as_mass_action>True</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>5</id>
+      <name>Cl&#244;turer les votes</name>
+      <items>
+        <item type="jump" id="1">
+          <status>4</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="e2125b89-4e9f-4160-a4e5-d060a4c5877e">
+          <roles>
+            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
+          </roles>
+          <statuses>
+            <statuse>4</statuse>
+          </statuses>
+          <allow_as_mass_action>True</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>6</id>
+      <name>Retenir le projet</name>
+      <items>
+        <item type="jump" id="1">
+          <status>5</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="0588fef9-425d-40aa-b0e9-a51475db64e0">
+          <roles>
+            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
+          </roles>
+          <statuses>
+            <statuse>5</statuse>
+            <statuse>6</statuse>
+          </statuses>
+          <allow_as_mass_action>True</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>7</id>
+      <name>Rejeter le projet</name>
+      <items>
+        <item type="jump" id="1">
+          <status>6</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="eb6f1d88-365e-4060-960e-83410902f4d7">
+          <roles>
+            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
+          </roles>
+          <statuses>
+            <statuse>4</statuse>
+            <statuse>5</statuse>
+          </statuses>
+          <allow_as_mass_action>True</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>8</id>
+      <name>Supprimer</name>
+      <items>
+        <item type="remove" id="1" />
+      </items>
+      <triggers>
+        <trigger type="manual" id="a7b1c1db-6337-4e9b-baf6-fa4f34d2268e">
+          <roles>
+            <item slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</item>
+          </roles>
+          <allow_as_mass_action>False</allow_as_mass_action>
+          <require_confirmation>True</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>9</id>
+      <name>Debug</name>
+      <items>
+        <item type="choice" id="1">
+          <label>Enregistr&#233;</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>recorded</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="2">
+          <label>Refuser</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>0</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="3">
+          <label>Accepter</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>1</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="4">
+          <label>Publier</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>2</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="5">
+          <label>Phase de vote</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>3</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="6">
+          <label>Cl&#244;turer</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>4</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="7">
+          <label>Retenir le projet</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>5</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="8">
+          <label>Rejeter</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>6</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="6b17d43d-26ee-4e79-bf73-9cfc1b44cc6e">
+          <roles>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </roles>
+          <allow_as_mass_action>False</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>10</id>
+      <name>Vote pour</name>
+      <items>
+        <item type="edit_carddata" id="1">
+          <action_label>+1 pour</action_label>
+          <formdef_slug>imio-ideabox-projet</formdef_slug>
+          <target_mode>manual</target_mode>
+          <target_id>{{ form_internal_id }}</target_id>
+          <mappings>
+            <mapping field_id="3df2a9e2-c923-4ae4-9339-2eb0f84fcf95">{{ form_var_voter_pour|add:1 }}</mapping>
+          </mappings>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="webservice" id="7dda4902-7b3d-426a-927f-ae09baa09ab7">
+          <identifier>vote_pour</identifier>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>11</id>
+      <name>Vote contre</name>
+      <items>
+        <item type="edit_carddata" id="1">
+          <action_label>+1 contre</action_label>
+          <formdef_slug>imio-ideabox-projet</formdef_slug>
+          <target_mode>manual</target_mode>
+          <target_id>{{ form_internal_id }}</target_id>
+          <mappings>
+            <mapping field_id="a6a02161-3b6c-4a84-8d1b-2397e8c14092">{{ form_var_voter_contre|add:1 }}</mapping>
+          </mappings>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="webservice" id="6a8781f2-9778-4087-ac65-f702195ef6cd">
+          <identifier>vote_contre</identifier>
+        </trigger>
+      </triggers>
+    </action>
+  </global_actions>
+</workflow>
