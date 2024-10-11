@@ -12,6 +12,7 @@
   <always_advertise>false</always_advertise>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
+  <category slug="ideabox" category_id="1">IDEABox</category>
   <workflow slug="imio-ideabox-commentaire" workflow_id="49">iMio - IDEABOX - Commentaire</workflow>
   <fields>
     <field>
