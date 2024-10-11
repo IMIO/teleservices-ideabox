@@ -1,0 +1,60 @@
+{
+  "roles": [
+    {
+      "name": "Administrateur IDEABOX",
+      "slug": "administrateur-ideabox",
+      "ou": {
+        "slug": "default"
+      }
+    },
+    {
+      "name": "API IDEABox",
+      "slug": "api-ideabox",
+      "ou": {
+        "slug": "default"
+      }
+    },
+    {
+      "name": "Debug",
+      "slug": "debug",
+      "ou": {
+        "slug": "default"
+      }
+    },
+    {
+      "name": "IDEABOX - Cr\\u00e9ation de campagne",
+      "slug": "ideabox-creation-de-campagne",
+      "ou": {
+        "slug": "default"
+      }
+    },
+    {
+      "name": "IDEABOX - Cr\\u00e9ation de projet",
+      "slug": "ideabox-creation-de-projet",
+      "ou": {
+        "slug": "default"
+      }
+    },
+    {
+      "name": "IDEABOX - Gestion de campagne",
+      "slug": "ideabox-gestion-de-campagne",
+      "ou": {
+        "slug": "default"
+      }
+    },
+    {
+      "name": "IDEABOX - Gestion de projet",
+      "slug": "ideabox-gestion-de-projet",
+      "ou": {
+        "slug": "default"
+      }
+    },
+    {
+      "name": "IDEABOX - Mod\\u00e9ration des commentaires",
+      "slug": "ideabox-moderation-des-commentaires",
+      "ou": {
+        "slug": "default"
+      }
+    }
+  ]
+}
