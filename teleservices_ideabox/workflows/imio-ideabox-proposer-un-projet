@@ -28,4 +28,89 @@
       <visibility />
       <items>
         <item type="create_carddata" id="2">
-          <action_label>C
+          <action_label>Cr&#233;ation du projet</action_label>
+          <formdef_slug>imio-ideabox-projet</formdef_slug>
+          <map_fields_by_varname>True</map_fields_by_varname>
+          <mappings>
+            <mapping field_id="3df2a9e2-c923-4ae4-9339-2eb0f84fcf95">0</mapping>
+            <mapping field_id="a6a02161-3b6c-4a84-8d1b-2397e8c14092">0</mapping>
+          </mappings>
+          <user_association_mode>keep-user</user_association_mode>
+          <varname>projet</varname>
+        </item>
+        <item type="register-comment" id="3">
+          <comment>&lt;a href="{{ form_links_projet_form_backoffice_url }}" target="_blank" rel="noopener noreferrer"&gt;Projet&lt;/a&gt;</comment>
+          <to>
+            <item role_id="_receiver">_receiver</item>
+          </to>
+        </item>
+        <item type="jump" id="1">
+          <status>3</status>
+          <mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>3</id>
+      <name>Projet Cr&#233;&#233;</name>
+      <colour>#f8e45c</colour>
+      <visibility />
+      <items>
+        <item type="jump" id="1">
+          <status>5</status>
+          <mode>trigger</mode>
+          <trigger>project_bounced</trigger>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="jump" id="2">
+          <status>4</status>
+          <mode>trigger</mode>
+          <trigger>project_accepted</trigger>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>5</id>
+      <name>Projet Refus&#233;</name>
+      <colour>#ff0000</colour>
+      <visibility />
+      <items />
+    </status>
+    <status>
+      <id>4</id>
+      <name>Projet Accept&#233;</name>
+      <colour>#57e389</colour>
+      <visibility />
+      <items>
+        <item type="jump" id="1">
+          <status>6</status>
+          <mode>trigger</mode>
+          <trigger>project_validated</trigger>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="jump" id="2">
+          <status>7</status>
+          <mode>trigger</mode>
+          <trigger>project_rejected</trigger>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>7</id>
+      <name>Projet Rejet&#233;</name>
+      <colour>#000000</colour>
+      <visibility />
+      <items />
+    </status>
+    <status>
+      <id>6</id>
+      <name>Projet Retenu</name>
+      <colour>#f5b842</colour>
+      <visibility />
+      <items />
+    </status>
+  </possible_status>
+</workflow>

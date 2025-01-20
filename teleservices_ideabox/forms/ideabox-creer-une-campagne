@@ -25,3 +25,78 @@
         <item>listings</item>
       </display_locations>
       <anonymise type="str">final</anonymise>
+      <id type="str">044b212e-4604-444d-aa72-f2f8ea243323</id>
+    </field>
+    <field>
+      <type>text</type>
+      <label type="str">Description</label>
+      <required type="bool">False</required>
+      <varname type="str">description</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <display_mode type="str">rich</display_mode>
+      <id type="str">978f37a0-c9cd-4a38-9900-22919fcfa3cc</id>
+    </field>
+    <field>
+      <type>date</type>
+      <label type="str">D&#233;but</label>
+      <required type="bool">False</required>
+      <varname type="str">debut</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+        <item>listings</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <minimum_is_future type="bool">False</minimum_is_future>
+      <date_in_the_past type="bool">False</date_in_the_past>
+      <date_can_be_today type="bool">False</date_can_be_today>
+      <id type="str">59e65528-024d-4787-b7c4-01184023a5b3</id>
+    </field>
+    <field>
+      <type>date</type>
+      <label type="str">Fin</label>
+      <required type="bool">False</required>
+      <varname type="str">fin</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+        <item>listings</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <minimum_is_future type="bool">False</minimum_is_future>
+      <date_in_the_past type="bool">False</date_in_the_past>
+      <date_can_be_today type="bool">False</date_can_be_today>
+      <id type="str">22e1355d-3e5a-470e-9370-4e649d5c1d88</id>
+    </field>
+  </fields>
+  <user-roles>
+    <role slug="ideabox-creation-de-campagne" role_id="5395718e4a774a2c86ad0cbe48919d60">IDEABOX - Cr&#233;ation de campagne</role>
+  </user-roles>
+  <roles>
+    <role slug="ideabox-creation-de-campagne" role_id="5395718e4a774a2c86ad0cbe48919d60" role_key="_receiver">IDEABOX - Cr&#233;ation de campagne</role>
+  </roles>
+  <options />
+  <custom_views />
+  <geolocations />
+  <management_sidebar_items>
+    <item>__default__</item>
+  </management_sidebar_items>
+  <digest_templates />
+  <workflow-migrations>
+    <migration old-workflow="_carddef_default" new-workflow="imio-ideabox-campagne" timestamp="2024-10-08T11:03:38.211477+02:00">
+      <timestamp>2024-10-08T11:03:38.211477+02:00</timestamp>
+      <status-mapping>
+        <map old="recorded" new="recorded" />
+        <map old="deleted" new="deleted" />
+      </status-mapping>
+    </migration>
+    <migration old-workflow="_default" new-workflow="imio-ideabox-creer-campagne" timestamp="2024-10-08T11:23:36.368102+02:00">
+      <timestamp>2024-10-08T11:23:36.368102+02:00</timestamp>
+      <status-mapping />
+    </migration>
+  </workflow-migrations>
+</formdef>

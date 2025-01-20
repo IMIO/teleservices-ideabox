@@ -11,4 +11,16 @@
         <item>validation</item>
         <item>summary</item>
       </display_locations>
-      <
+      <anonymise type="str">final</anonymise>
+      <document_type>
+        <id>_image</id>
+        <label>Fichiers image</label>
+        <mimetypes>image/*</mimetypes>
+      </document_type>
+      <allow_portfolio_picking type="bool">False</allow_portfolio_picking>
+      <automatic_image_resize type="bool">True</automatic_image_resize>
+      <storage type="str">default</storage>
+      <id type="str">bff1eff2cf-c266-464a-abba-fa649906b9f0</id>
+    </field>
+  </fields>
+</block>

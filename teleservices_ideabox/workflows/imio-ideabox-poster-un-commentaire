@@ -25,4 +25,51 @@
       <id>2</id>
       <name>Commentaire soumis</name>
       <colour>#0099ff</colour>
-      <vi
+      <visibility />
+      <items>
+        <item type="create_carddata" id="1">
+          <action_label>Soumission du commentaire</action_label>
+          <formdef_slug>imio-ideabox-commentaire</formdef_slug>
+          <map_fields_by_varname>True</map_fields_by_varname>
+          <mappings>
+            <mapping field_id="ad8934af-f93a-4b6a-a14a-db1f12d73ec9">{{ session_user }}</mapping>
+            <mapping field_id="5fd26a92-bc77-4a9d-aefa-70ca475f35bf">{{ now|datetime:"d/m/Y H:i" }}</mapping>
+            <mapping field_id="df39034e-9ec1-4c14-bf4c-85fca15ee110">{{ form_var_not_anonyme }}</mapping>
+          </mappings>
+          <user_association_mode>keep-user</user_association_mode>
+          <varname>commentaire</varname>
+        </item>
+        <item type="jump" id="2">
+          <status>3</status>
+          <mode>trigger</mode>
+          <trigger>comment_post</trigger>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="jump" id="3">
+          <status>4</status>
+          <mode>trigger</mode>
+          <trigger>comment_reject</trigger>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>4</id>
+      <name>Commentaire Refus&#233;</name>
+      <colour>#ff0000</colour>
+      <visibility />
+      <items>
+        <item type="register-comment" id="1">
+          <comment>{{ form_trigger_comment_reject_content_motif }}</comment>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>3</id>
+      <name>Commentaire post&#233;</name>
+      <colour>#57e389</colour>
+      <visibility />
+      <items />
+    </status>
+  </possible_status>
+</workflow>

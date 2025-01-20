@@ -16,4 +16,51 @@
   <fields>
     <field>
       <type>item</type>
-      <label type="str">The
+      <label type="str">Themes</label>
+      <required type="bool">True</required>
+      <varname type="str">source_de_donnees</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">no</anonymise>
+      <display_mode type="str">list</display_mode>
+      <data_source>
+        <type>imio_ideabox_all_themes</type>
+      </data_source>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">8e075f4d-e81d-4e6b-961a-1fcaf644a555</id>
+    </field>
+    <field>
+      <type>item</type>
+      <label type="str">Zones</label>
+      <required type="bool">True</required>
+      <varname type="str">zones</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">no</anonymise>
+      <display_mode type="str">list</display_mode>
+      <data_source>
+        <type>imio_ideabox_all_zones</type>
+      </data_source>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">6c8062cb-41db-431f-a8ef-72d7fdf469b5</id>
+    </field>
+  </fields>
+  <options />
+  <custom_views />
+  <geolocations />
+  <management_sidebar_items>
+    <item>__default__</item>
+  </management_sidebar_items>
+</formdef>

@@ -10,4 +10,15 @@
       <display_locations>
         <item>validation</item>
         <item>summary</item>
-  
+      </display_locations>
+      <prefill>
+        <type>none</type>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <allow_portfolio_picking type="bool">False</allow_portfolio_picking>
+      <automatic_image_resize type="bool">True</automatic_image_resize>
+      <storage type="str">default</storage>
+      <id type="str">bf229ecbb4-57e1-4f03-bac4-31f10a00acc3</id>
+    </field>
+  </fields>
+</block>

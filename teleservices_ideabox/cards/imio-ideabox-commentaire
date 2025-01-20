@@ -33,4 +33,96 @@
       <varname type="str">projet</varname>
       <display_locations>
         <item>validation</item>
-    
+        <item>summary</item>
+        <item>listings</item>
+      </display_locations>
+      <anonymise type="str">no</anonymise>
+      <display_mode type="str">list</display_mode>
+      <data_source>
+        <type>carddef:imio-ideabox-projet</type>
+      </data_source>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">fc1236bd-7e67-4717-b377-1725e28b9a95</id>
+    </field>
+    <field>
+      <type>text</type>
+      <label type="str">Commentaire</label>
+      <required type="bool">True</required>
+      <varname type="str">commentaire</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <display_mode type="str">rich</display_mode>
+      <id type="str">10c1dbaf-2433-4129-ad73-da9dde6a403a</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Date et heure de soummission</label>
+      <required type="bool">True</required>
+      <varname type="str">date_heure_soummission</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <id type="str">5fd26a92-bc77-4a9d-aefa-70ca475f35bf</id>
+    </field>
+    <field>
+      <type>bool</type>
+      <label type="str">Publication non anonyme</label>
+      <required type="bool">False</required>
+      <varname type="str">not_anonyme</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">no</anonymise>
+      <id type="str">df39034e-9ec1-4c14-bf4c-85fca15ee110</id>
+    </field>
+  </fields>
+  <user-roles>
+    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</role>
+  </user-roles>
+  <backoffice-submission-roles>
+    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</role>
+  </backoffice-submission-roles>
+  <roles>
+    <role slug="ideabox-moderation-des-commentaires" role_id="48c71f9617da47499b9fbad2ae358646" role_key="_gestion-des-commentaire">IDEABOX - Mod&#233;ration des commentaires</role>
+  </roles>
+  <options />
+  <custom_views>
+    <custom_view>
+      <title>Action en attente</title>
+      <slug>action-en-attente</slug>
+      <visibility>any</visibility>
+      <filters>
+        <filter>pending</filter>
+        <filter-operator>eq</filter-operator>
+        <filter-status>on</filter-status>
+      </filters>
+      <is_default>True</is_default>
+      <columns>
+        <id>id</id>
+        <id>time</id>
+        <id>ad8934af-f93a-4b6a-a14a-db1f12d73ec9</id>
+        <id>fc1236bd-7e67-4717-b377-1725e28b9a95</id>
+      </columns>
+    </custom_view>
+  </custom_views>
+  <geolocations />
+  <management_sidebar_items>
+    <item>__default__</item>
+  </management_sidebar_items>
+  <workflow-migrations>
+    <migration old-workflow="_carddef_default" new-workflow="imio-ideabox-commentaire" timestamp="2024-10-08T11:09:04.838073+02:00">
+      <timestamp>2024-10-08T11:09:04.838073+02:00</timestamp>
+      <status-mapping />
+    </migration>
+  </workflow-migrations>
+</carddef>

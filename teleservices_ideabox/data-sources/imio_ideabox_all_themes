@@ -3,4 +3,7 @@
   <slug>imio_ideabox_all_themes</slug>
   <data_source>
     <type>json</type>
-    <value>{{ eservices_url }}api/cards/imio-ideabox-theme/list</value
+    <value>{{ eservices_url }}api/cards/imio-ideabox-theme/list</value>
+  </data_source>
+  <category slug="imio-ideabox" category_id="2">iMio - IDEABOX</category>
+</datasource>

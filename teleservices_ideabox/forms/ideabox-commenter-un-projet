@@ -45,4 +45,70 @@
       <display_mode type="str">list</display_mode>
       <data_source>
         <type>carddef:imio-ideabox-projet:commentaire-2</type>
-        <value>[{"uuid": "69b8a0f0-9fb4-42d1-8303-eb3b6e36d70d", "id": "2", "internal_id": "2", "display_id": "16-2", "display_name": "iMio - IDEABOX - Projet - n\u00b016-2", "text": "Onlyfans de Manu", "url": "https://staging3-formulaires.guichet-citoyen.be/backoffice/data/imio-ideabox-projet/2/", "receipt_time": "2024-10-08T14:26:15", "last_update_time": "2024-10-09T13:15:33", "criticality_level": 0, "api_url": "https://staging3-formulaires.guichet-citoyen.be/api/cards/imio-ideabox-projet/2/", "backoffice_url": "https://staging3-formulaires.guichet-citoyen.be/backoffice/data/imio-ideabox-projet/2/", "user": {"id": 1, "name": "Admin oob", "email": "admints@imio.be", "NameID": ["e59ba0ecbab04791959cb9bda8d9ac31"], "first_name": "Admin", "last_name": "oob", "street": "L\u00e9on Morel", "address_supplement": "", "num_house": "1", "num_box": "", "zipcode": "5132", "city": "Gembloux", "country": "Belgique", "phone": "", "birthdate": "1991-08-06", "niss": ""}, "fields": {"nom": "Onlyfans de Manu", "description": "&lt;p&gt;Distribuer des acc\u00e8s premium 72h au onlyfans de Manu \u00e0 toutes les agentes r\u00e9f\u00e9rentes SmartWeb qui viennent ne Atelier&lt;/p&gt;", "themes_raw": ["3", "1", "4"], "themes": "Chevetogne, Domaine Expension, Grotte de Han", "themes_structured": [{"id": 3, "text": "Chevetogne", "nom": "Chevetogne"}, {"id": 1, "text": "Domaine Expension", "nom": "Domaine Expension"}, {"id": 4, "text": "Grotte de Han", "nom": "Grotte de Han"}], "campagne_raw": "2", "campagne": "Sprint iMio Fall 2024", "campagne_structured": {"id": 2, "text": "Sprint iMio Fall 2024", "titre": "Sprint iMio Fall 2024", 
+      </data_source>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">e6d200f0-d37d-491f-823b-ed59a633d340</id>
+    </field>
+    <field>
+      <type>comment</type>
+      <label type="str">&lt;p&gt;{{form_var_projet_description|safe}}&lt;/p&gt;
+</label>
+      <condition>
+        <type>django</type>
+        <value>form_var_projet</value>
+      </condition>
+      <display_locations />
+      <id type="str">33d4ac7b-0f75-434e-aecb-926835963e4c</id>
+    </field>
+    <field>
+      <type>text</type>
+      <label type="str">Commentaire</label>
+      <required type="bool">True</required>
+      <varname type="str">commentaire</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <display_mode type="str">rich</display_mode>
+      <id type="str">6b189885-bee1-4b91-b6c1-111092e63a60</id>
+    </field>
+    <field>
+      <type>bool</type>
+      <label type="str">Publier en votre nom</label>
+      <required type="bool">False</required>
+      <varname type="str">not_anonyme</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">no</anonymise>
+      <id type="str">793b6b72-0799-4854-a0d5-b9554fa4ff68</id>
+    </field>
+  </fields>
+  <user-roles>
+    <role role_id="logged-users">logged-users</role>
+  </user-roles>
+  <backoffice-submission-roles>
+    <role slug="ideabox-moderation-des-commentaires" role_id="48c71f9617da47499b9fbad2ae358646">IDEABOX - Mod&#233;ration des commentaires</role>
+  </backoffice-submission-roles>
+  <roles>
+    <role slug="ideabox-moderation-des-commentaires" role_id="48c71f9617da47499b9fbad2ae358646" role_key="_receiver">IDEABOX - Mod&#233;ration des commentaires</role>
+  </roles>
+  <options />
+  <custom_views />
+  <geolocations />
+  <management_sidebar_items>
+    <item>__default__</item>
+  </management_sidebar_items>
+  <workflow-migrations>
+    <migration old-workflow="_default" new-workflow="imio-ideabox-poster-un-commentaire" timestamp="2024-10-09T09:09:56.958050+02:00">
+      <timestamp>2024-10-09T09:09:56.958050+02:00</timestamp>
+      <status-mapping />
+    </migration>
+  </workflow-migrations>
+</formdef>

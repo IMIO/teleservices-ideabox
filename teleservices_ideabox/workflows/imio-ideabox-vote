@@ -23,4 +23,49 @@
     </status>
     <status>
       <id>0</id>
-      <name>Incr&#233;m
+      <name>Incr&#233;mentation</name>
+      <colour>#FFFFFF</colour>
+      <visibility />
+      <items>
+        <item type="external_workflow_global_action" id="1">
+          <slug>carddef:imio-ideabox-projet</slug>
+          <trigger_id>action:vote_pour</trigger_id>
+          <target_mode>manual</target_mode>
+          <target_id>{{ form_var_projet_id }}</target_id>
+          <condition>
+            <type>django</type>
+            <value>form_var_vote_pour</value>
+          </condition>
+        </item>
+        <item type="external_workflow_global_action" id="2">
+          <slug>carddef:imio-ideabox-projet</slug>
+          <trigger_id>action:vote_contre</trigger_id>
+          <target_mode>manual</target_mode>
+          <target_id>{{ form_var_projet_id }}</target_id>
+          <condition>
+            <type>django</type>
+            <value>not form_var_vote_pour</value>
+          </condition>
+        </item>
+      </items>
+    </status>
+  </possible_status>
+  <global_actions>
+    <action>
+      <id>1</id>
+      <name>Supprimer</name>
+      <items>
+        <item type="remove" id="1" />
+      </items>
+      <triggers>
+        <trigger type="manual" id="3a1cee1f-51aa-4dfe-822e-451718dc037d">
+          <roles>
+            <item slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</item>
+          </roles>
+          <allow_as_mass_action>False</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+  </global_actions>
+</workflow>

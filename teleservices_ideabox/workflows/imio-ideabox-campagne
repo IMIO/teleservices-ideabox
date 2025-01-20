@@ -26,4 +26,130 @@
         <item type="choice" id="2">
           <label>Activer</label>
           <by>
-            <
+            <item slug="ideabox-gestion-de-campagne" role_id="34574221a41a499d82fb708c6af9b891">IDEABOX - Gestion de campagne</item>
+          </by>
+          <status>0</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>0</id>
+      <name>Active</name>
+      <colour>#57e389</colour>
+      <visibility />
+      <items>
+        <item type="choice" id="1">
+          <label>Cl&#244;turer</label>
+          <by>
+            <item slug="ideabox-gestion-de-campagne" role_id="34574221a41a499d82fb708c6af9b891">IDEABOX - Gestion de campagne</item>
+          </by>
+          <status>1</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>1</id>
+      <name>Cl&#244;tur&#233;e</name>
+      <colour>#c0bfbc</colour>
+      <visibility />
+      <items>
+        <item type="choice" id="1">
+          <label>Archiver</label>
+          <by>
+            <item slug="ideabox-gestion-de-campagne" role_id="34574221a41a499d82fb708c6af9b891">IDEABOX - Gestion de campagne</item>
+          </by>
+          <status>2</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>2</id>
+      <name>Archiv&#233;e</name>
+      <colour>#000000</colour>
+      <visibility />
+      <items />
+    </status>
+  </possible_status>
+  <global_actions>
+    <action>
+      <id>1</id>
+      <name>Debug</name>
+      <items>
+        <item type="choice" id="1">
+          <label>Enregistr&#233;</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>recorded</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="2">
+          <label>Activer</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>0</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="3">
+          <label>Cl&#244;turer</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>1</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="4">
+          <label>Archiver</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>2</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="81745420-c37e-490c-a072-32299c893516">
+          <roles>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </roles>
+          <allow_as_mass_action>False</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>2</id>
+      <name>Supprimer</name>
+      <items>
+        <item type="remove" id="1" />
+      </items>
+      <triggers>
+        <trigger type="manual" id="f998ca42-4bb1-47c7-a23c-adbbfc3e9fdd">
+          <roles>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </roles>
+          <allow_as_mass_action>False</allow_as_mass_action>
+          <require_confirmation>True</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+  </global_actions>
+</workflow>
