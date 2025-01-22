@@ -157,6 +157,14 @@
           <status>0</status>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
       </items>
       <triggers>
         <trigger type="manual" id="0f153c6e-12b8-450f-9d77-9a1f23490ef1">
@@ -179,6 +187,14 @@
         <item type="jump" id="1">
           <status>1</status>
           <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
         </item>
       </items>
       <triggers>
@@ -203,6 +219,14 @@
           <status>2</status>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
       </items>
       <triggers>
         <trigger type="manual" id="2bf29e27-d8b7-4514-851c-3604ac34ba21">
@@ -224,6 +248,14 @@
         <item type="jump" id="1">
           <status>3</status>
           <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
         </item>
       </items>
       <triggers>
@@ -247,6 +279,14 @@
           <status>4</status>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
       </items>
       <triggers>
         <trigger type="manual" id="e2125b89-4e9f-4160-a4e5-d060a4c5877e">
@@ -268,6 +308,14 @@
         <item type="jump" id="1">
           <status>5</status>
           <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
         </item>
       </items>
       <triggers>
@@ -291,6 +339,14 @@
         <item type="jump" id="1">
           <status>6</status>
           <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
         </item>
       </items>
       <triggers>
@@ -407,6 +463,14 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
+        <item type="set-backoffice-fields" id="9">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
       </items>
       <triggers>
         <trigger type="manual" id="6b17d43d-26ee-4e79-bf73-9cfc1b44cc6e">
@@ -459,4 +523,20 @@
       </triggers>
     </action>
   </global_actions>
+  <backoffice-fields>
+    <formdef>
+      <name>-</name>
+      <fields>
+        <field>
+          <type>string</type>
+          <label type="str">Statut</label>
+          <required type="bool">True</required>
+          <varname type="str">statut</varname>
+          <display_locations />
+          <anonymise type="str">final</anonymise>
+          <id type="str">bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</id>
+        </field>
+      </fields>
+    </formdef>
+  </backoffice-fields>
 </workflow>
