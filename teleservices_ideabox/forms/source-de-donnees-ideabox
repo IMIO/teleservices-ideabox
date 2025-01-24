@@ -57,6 +57,9 @@
       <id type="str">6c8062cb-41db-431f-a8ef-72d7fdf469b5</id>
     </field>
   </fields>
+  <backoffice-submission-roles>
+    <role slug="api-authentic" role_id="e224bac85f484720bff5bc12ee1391a7">API Authentic</role>
+  </backoffice-submission-roles>
   <options />
   <custom_views />
   <geolocations />
