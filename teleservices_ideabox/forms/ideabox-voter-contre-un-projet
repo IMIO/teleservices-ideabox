@@ -119,6 +119,9 @@
   <user-roles>
     <role role_id="logged-users">logged-users</role>
   </user-roles>
+  <backoffice-submission-roles>
+    <role slug="api-ideabox" role_id="c2ce2ec872814abb99e5e24a02b1e31c">API IDEABox</role>
+  </backoffice-submission-roles>
   <roles>
     <role slug="ideabox-gestion-de-projet" role_id="e675ef6940ad4cd4b49921b7860c2ee7" role_key="_receiver">IDEABOX - Gestion de projet</role>
   </roles>

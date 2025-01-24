@@ -14,8 +14,34 @@
         <role>__restricted__</role>
       </visibility>
       <items>
+        <item type="set-backoffice-fields" id="2">
+          <label>Vote autorisation submission backoffice</label>
+          <fields>
+            <field>
+              <field_id>bo71df3bbc-cb8d-40c1-81b1-4bb11391911a</field_id>
+              <value>{% if not cards|objects:"imio-ideabox-vote"|filter_by:"projet"|filter_value:form_var_projet|filter_by_user:form_user|first|is_empty or cards|objects:"imio-ideabox-vote"|filter_by:"campagne"|filter_value:form_var_projet_live_var_campagne|filter_by_user:form_user|count &gt;= form_var_projet_live_var_campagne_live_var_nombre_vote_autorise|default:1000 %}{{ False }}{% else %}{{ True }}{% endif %}</value>
+            </field>
+          </fields>
+          <condition>
+            <type>django</type>
+            <value>form_submission_backoffice</value>
+          </condition>
+        </item>
         <item type="jump" id="1">
           <status>2</status>
+          <condition>
+            <type>django</type>
+            <value>not form_submission_backoffice or form_var_vote_autorise</value>
+          </condition>
+          <mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="jump" id="3">
+          <status>4</status>
+          <condition>
+            <type>django</type>
+            <value>not form_var_vote_autorise</value>
+          </condition>
           <mode>immediate</mode>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
@@ -46,6 +72,13 @@
       </items>
     </status>
     <status>
+      <id>4</id>
+      <name>Vote Non comptabilis&#233;</name>
+      <colour>#ff0000</colour>
+      <visibility />
+      <items />
+    </status>
+    <status>
       <id>3</id>
       <name>Vote comptabilis&#233;</name>
       <colour>#57e389</colour>
@@ -53,4 +86,23 @@
       <items />
     </status>
   </possible_status>
+  <backoffice-fields>
+    <formdef>
+      <name>-</name>
+      <fields>
+        <field>
+          <type>bool</type>
+          <label type="str">Vote autorise</label>
+          <required type="bool">False</required>
+          <varname type="str">vote_autorise</varname>
+          <display_locations>
+            <item>validation</item>
+            <item>summary</item>
+          </display_locations>
+          <anonymise type="str">no</anonymise>
+          <id type="str">bo71df3bbc-cb8d-40c1-81b1-4bb11391911a</id>
+        </field>
+      </fields>
+    </formdef>
+  </backoffice-fields>
 </workflow>
