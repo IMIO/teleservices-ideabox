@@ -12,7 +12,7 @@
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
   <category slug="ideabox" category_id="1">IDEABox</category>
-  <workflow slug="_carddef_default" workflow_id="_carddef_default">Par d&#233;faut (fiches)</workflow>
+  <workflow slug="imio-ideabox-theme" workflow_id="81">iMio - IdeaBox - Theme</workflow>
   <fields>
     <field>
       <type>string</type>
@@ -36,6 +36,8 @@
   </backoffice-submission-roles>
   <roles>
     <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a" role_key="_editor">Debug</role>
+    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a" role_key="_viewer">Debug</role>
+    <role slug="api-ideabox" role_id="c2ce2ec872814abb99e5e24a02b1e31c" role_key="_api">API IDEABox</role>
   </roles>
   <options />
   <custom_views />

@@ -1,0 +1,48 @@
+<workflow id="80">
+  <name>iMio - IdeaBox - Zone</name>
+  <slug>imio-ideabox-zone</slug>
+  <category slug="ideabox" category_id="2">IDEABox</category>
+  <roles>
+    <role id="_api">API</role>
+    <role id="_editor">&#201;diteur</role>
+    <role id="_viewer">Visualisateur</role>
+  </roles>
+  <possible_status>
+    <status>
+      <id>recorded</id>
+      <name>Enregistr&#233;e</name>
+      <colour>#FFFFFF</colour>
+      <visibility />
+      <items>
+        <item type="editable" id="1">
+          <by>
+            <item role_id="_editor">_editor</item>
+          </by>
+          <status>recorded</status>
+          <label>Modifier la fiche</label>
+          <operation_mode>full</operation_mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="2">
+          <label>Supprimer la fiche</label>
+          <by>
+            <item role_id="_editor">_editor</item>
+          </by>
+          <status>deleted</status>
+          <require_confirmation>True</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>deleted</id>
+      <name>Supprim&#233;e</name>
+      <colour>#FFFFFF</colour>
+      <visibility />
+      <items>
+        <item type="remove" id="1" />
+      </items>
+    </status>
+  </possible_status>
+</workflow>
