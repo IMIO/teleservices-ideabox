@@ -10,3 +10,8 @@ Bundle of iA.Teleservices procedures containing forms, workflows and all the lin
 3. Add access API IDEABox in API Clients with role API IDEABox
 
 4. Add access API Authentic in API Clients with role API Authentic
+
+5. Add hobo varaible
+    * Libellé : Instance Smartweb
+    * Identifiant : ideabox_url_smartweb
+    * Valeur : https://xxx.be/
