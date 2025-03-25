@@ -389,7 +389,7 @@
     </action>
     <action>
       <id>12</id>
-      <name>Publier sans possibilit&#233; ult&#233;rieur de voter</name>
+      <name>Publier sans possibilit&#233; ult&#233;rieure de voter</name>
       <items>
         <item type="jump" id="1">
           <status>7</status>

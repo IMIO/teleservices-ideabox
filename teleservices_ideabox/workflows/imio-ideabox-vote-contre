@@ -83,7 +83,12 @@
       <name>Vote comptabilis&#233;</name>
       <colour>#57e389</colour>
       <visibility />
-      <items />
+      <items>
+        <item type="register-comment" id="1">
+          <comment>Merci pour votre vote ! Nous le prendrons en compte pour s&#233;lectionner le ou les projets de notre campagne.</comment>
+          <level>success</level>
+        </item>
+      </items>
     </status>
   </possible_status>
   <backoffice-fields>
@@ -93,7 +98,7 @@
         <field>
           <type>bool</type>
           <label type="str">Vote autorise</label>
-          <required type="bool">False</required>
+          <required type="str">optional</required>
           <varname type="str">vote_autorise</varname>
           <display_locations>
             <item>validation</item>

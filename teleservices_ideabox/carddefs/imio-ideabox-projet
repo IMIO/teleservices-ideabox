@@ -168,7 +168,7 @@
     <field>
       <type>text</type>
       <label type="str">Commentaires</label>
-      <required type="str">required</required>
+      <required type="str">optional</required>
       <varname type="str">commentaires</varname>
       <display_locations>
         <item>validation</item>
@@ -330,7 +330,7 @@
     <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</role>
   </backoffice-submission-roles>
   <roles>
-    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a" role_key="_editor">Debug</role>
+    <role slug="ideabox-creation-de-projet" role_id="953f23b16aac45428058c5e50214ad96" role_key="_editor">IDEABOX - Cr&#233;ation de projet</role>
     <role slug="api-ideabox" role_id="c2ce2ec872814abb99e5e24a02b1e31c" role_key="_api">API IDEABox</role>
     <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a" role_key="_viewer">Debug</role>
     <role slug="ideabox-gestion-de-projet" role_id="e675ef6940ad4cd4b49921b7860c2ee7" role_key="_gestion-des-projets">IDEABOX - Gestion de projet</role>

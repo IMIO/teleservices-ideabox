@@ -36,7 +36,7 @@
     </field>
     <field>
       <type>string</type>
-      <label type="str">Nom</label>
+      <label type="str">Nom du projet</label>
       <required type="str">required</required>
       <varname type="str">nom</varname>
       <display_locations>
@@ -124,6 +124,7 @@
       <type>string</type>
       <label type="str">Porteur du projet</label>
       <required type="str">required</required>
+      <hint type="str">&lt;p&gt;Nom de l'association, du groupement, de la personne initiatrice...&lt;/p&gt;</hint>
       <varname type="str">porteur</varname>
       <display_locations>
         <item>validation</item>
@@ -134,7 +135,7 @@
     </field>
     <field>
       <type>subtitle</type>
-      <label type="str">Fichiers</label>
+      <label type="str">Images et annexes</label>
       <display_locations>
         <item>validation</item>
         <item>summary</item>
@@ -143,8 +144,9 @@
     </field>
     <field>
       <type>block</type>
-      <label type="str">Images</label>
+      <label type="str">Ajoutez une image</label>
       <required type="str">required</required>
+      <hint type="str">&lt;p&gt;Minimum une image.&lt;/p&gt;</hint>
       <varname type="str">images</varname>
       <display_locations>
         <item>validation</item>
@@ -154,7 +156,7 @@
       <default_items_count type="int">1</default_items_count>
       <max_items type="int">50</max_items>
       <add_element_label type="str">Ajouter une image</add_element_label>
-      <label_display type="str">hidden</label_display>
+      <label_display type="str">subtitle</label_display>
       <remove_button type="bool">True</remove_button>
       <block_slug type="str">imio_ajouter_une_image</block_slug>
       <id type="str">c6ab3a44-b215-4eab-8c35-8e1a5aa51fd0</id>
@@ -163,6 +165,7 @@
       <type>block</type>
       <label type="str">Annexes</label>
       <required type="str">optional</required>
+      <hint type="str">&lt;p&gt;Optionnel.&lt;/p&gt;</hint>
       <varname type="str">annexes</varname>
       <display_locations>
         <item>validation</item>

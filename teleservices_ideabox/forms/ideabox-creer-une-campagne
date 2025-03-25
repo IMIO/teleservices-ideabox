@@ -138,6 +138,7 @@
       <type>string</type>
       <label type="str">Nombre de vote autoris&#233;</label>
       <required type="str">optional</required>
+      <hint type="str">&lt;p&gt;Les citoyens pourront voter pour autant de projets propos&#233;s dans cette campagne que le nombre indiqu&#233;. Si aucun nombre n'est indiqu&#233;, les citoyens pourront voter pour tous les projets.&lt;/p&gt;</hint>
       <varname type="str">nombre_vote_autorise</varname>
       <display_locations>
         <item>validation</item>

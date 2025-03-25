@@ -14,6 +14,14 @@
       <colour>#FFFFFF</colour>
       <visibility />
       <items>
+        <item type="set-backoffice-fields" id="3">
+          <fields>
+            <field>
+              <field_id>bocff279b9-6027-4958-8635-e857821fcb74</field_id>
+              <value>{{ form_var_status }}</value>
+            </field>
+          </fields>
+        </item>
         <item type="editable" id="1">
           <by>
             <item role_id="_editor">_editor</item>
@@ -41,6 +49,14 @@
       <colour>#57e389</colour>
       <visibility />
       <items>
+        <item type="set-backoffice-fields" id="3">
+          <fields>
+            <field>
+              <field_id>bocff279b9-6027-4958-8635-e857821fcb74</field_id>
+              <value>{{ form_var_status }}</value>
+            </field>
+          </fields>
+        </item>
         <item type="choice" id="1">
           <label>Cl&#244;turer la campagne et les votes</label>
           <by>
@@ -75,6 +91,14 @@
       <colour>#c0bfbc</colour>
       <visibility />
       <items>
+        <item type="set-backoffice-fields" id="3">
+          <fields>
+            <field>
+              <field_id>bocff279b9-6027-4958-8635-e857821fcb74</field_id>
+              <value>{{ form_var_status }}</value>
+            </field>
+          </fields>
+        </item>
         <item type="choice" id="1">
           <label>Archiver</label>
           <by>
@@ -99,6 +123,14 @@
       <colour>#000000</colour>
       <visibility />
       <items>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bocff279b9-6027-4958-8635-e857821fcb74</field_id>
+              <value>{{ form_var_status }}</value>
+            </field>
+          </fields>
+        </item>
         <item type="external_workflow_global_action" id="1">
           <slug>carddef:imio-ideabox-projet</slug>
           <trigger_id>action:remove_publishing</trigger_id>
@@ -181,4 +213,23 @@
       </triggers>
     </action>
   </global_actions>
+  <backoffice-fields>
+    <formdef>
+      <name>-</name>
+      <fields>
+        <field>
+          <type>string</type>
+          <label type="str">Statut</label>
+          <required type="str">required</required>
+          <varname type="str">statut</varname>
+          <display_locations>
+            <item>validation</item>
+            <item>summary</item>
+          </display_locations>
+          <anonymise type="str">final</anonymise>
+          <id type="str">bocff279b9-6027-4958-8635-e857821fcb74</id>
+        </field>
+      </fields>
+    </formdef>
+  </backoffice-fields>
 </workflow>

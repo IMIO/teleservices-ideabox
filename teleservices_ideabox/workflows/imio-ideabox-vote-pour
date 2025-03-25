@@ -53,7 +53,7 @@
       <colour>#0099ff</colour>
       <visibility />
       <items>
-        <item type="create_carddata" id="2">
+        <item type="create_carddata" id="1">
           <action_label>Vote Pour</action_label>
           <formdef_slug>imio-ideabox-vote</formdef_slug>
           <map_fields_by_varname>False</map_fields_by_varname>
@@ -64,7 +64,7 @@
           </mappings>
           <user_association_mode>keep-user</user_association_mode>
         </item>
-        <item type="jump" id="1">
+        <item type="jump" id="2">
           <status>3</status>
           <mode>immediate</mode>
           <set_marker_on_status>False</set_marker_on_status>
@@ -83,7 +83,12 @@
       <name>Vote comptabilis&#233;</name>
       <colour>#57e389</colour>
       <visibility />
-      <items />
+      <items>
+        <item type="register-comment" id="1">
+          <comment>Merci pour votre vote ! Nous le prendrons en compte pour s&#233;lectionner le ou les projets de notre campagne.</comment>
+          <level>success</level>
+        </item>
+      </items>
     </status>
   </possible_status>
   <backoffice-fields>
@@ -93,7 +98,7 @@
         <field>
           <type>bool</type>
           <label type="str">Vote autoris&#233;</label>
-          <required type="bool">False</required>
+          <required type="str">optional</required>
           <varname type="str">vote_autorise</varname>
           <display_locations>
             <item>validation</item>
