@@ -17,7 +17,7 @@
     <field>
       <type>item</type>
       <label type="str">Themes</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">source_de_donnees</varname>
       <display_locations>
         <item>validation</item>
@@ -37,8 +37,50 @@
     </field>
     <field>
       <type>item</type>
+      <label type="str">Themes iA.Smartweb</label>
+      <required type="str">required</required>
+      <varname type="str">themes_iasmartweb</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">no</anonymise>
+      <display_mode type="str">list</display_mode>
+      <data_source>
+        <type>imio_ideabox_iasmartweb_thematiques</type>
+      </data_source>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">71c92d8c-2008-43a1-a007-61dcf640eadb</id>
+    </field>
+    <field>
+      <type>item</type>
+      <label type="str">Themes iA.T&#233;l&#233;services</label>
+      <required type="str">required</required>
+      <varname type="str">themes_iateleservices</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">no</anonymise>
+      <display_mode type="str">list</display_mode>
+      <data_source>
+        <type>imio_ideabox_iateleservices_thematiques</type>
+      </data_source>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">cda276cd-333a-45ba-a9f6-daef2116634e</id>
+    </field>
+    <field>
+      <type>item</type>
       <label type="str">Zones</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">zones</varname>
       <display_locations>
         <item>validation</item>
@@ -55,6 +97,12 @@
       <image_desktop_size type="str">150</image_desktop_size>
       <image_mobile_size type="str">75</image_mobile_size>
       <id type="str">6c8062cb-41db-431f-a8ef-72d7fdf469b5</id>
+    </field>
+    <field>
+      <type>comment</type>
+      <label type="str">&lt;p&gt;{{ webservice.imio_iasmartweb_thematiques }}&lt;/p&gt;</label>
+      <display_locations />
+      <id type="str">6e0fad3f-085d-4a58-9f84-8ab28732e574</id>
     </field>
   </fields>
   <backoffice-submission-roles>

@@ -1,0 +1,9 @@
+<datasource id="218">
+  <name>iMio - IDEABOX - iA.Smartweb - Th&#233;matiques</name>
+  <slug>imio_ideabox_iasmartweb_thematiques</slug>
+  <data_source>
+    <type>jsonvalue</type>
+    <value>[{% for item in webservice.imio_iasmartweb_thematiques.items %}{"id": {{ item|get:"value"|json_dumps }}, "text": {{ item|get:"title"|json_dumps }}}{% if not forloop.last %}, {% endif %}{% endfor %}]</value>
+  </data_source>
+  <category slug="imio-ideabox" category_id="2">iMio - IDEABOX</category>
+</datasource>

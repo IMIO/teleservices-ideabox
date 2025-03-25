@@ -37,7 +37,7 @@
     <field>
       <type>string</type>
       <label type="str">Nom</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">nom</varname>
       <display_locations>
         <item>validation</item>
@@ -50,7 +50,7 @@
     <field>
       <type>text</type>
       <label type="str">Description</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">description</varname>
       <display_locations>
         <item>validation</item>
@@ -63,7 +63,7 @@
     <field>
       <type>item</type>
       <label type="str">Campagne</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">campagne</varname>
       <display_locations>
         <item>validation</item>
@@ -91,7 +91,7 @@
     <field>
       <type>items</type>
       <label type="str">Th&#232;mes</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">themes</varname>
       <display_locations>
         <item>validation</item>
@@ -123,7 +123,7 @@
     <field>
       <type>string</type>
       <label type="str">Porteur du projet</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">porteur</varname>
       <display_locations>
         <item>validation</item>
@@ -144,7 +144,7 @@
     <field>
       <type>block</type>
       <label type="str">Images</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">images</varname>
       <display_locations>
         <item>validation</item>
@@ -162,7 +162,7 @@
     <field>
       <type>block</type>
       <label type="str">Annexes</label>
-      <required type="bool">False</required>
+      <required type="str">optional</required>
       <varname type="str">annexes</varname>
       <display_locations>
         <item>validation</item>
@@ -189,7 +189,7 @@
     <field>
       <type>items</type>
       <label type="str">Zones</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">zones</varname>
       <display_locations>
         <item>validation</item>
@@ -212,7 +212,7 @@
     <field>
       <type>map</type>
       <label type="str">G&#233;olocalisation</label>
-      <required type="bool">False</required>
+      <required type="str">optional</required>
       <varname type="str">geolocalisation</varname>
       <display_locations>
         <item>validation</item>
@@ -232,7 +232,7 @@
     <field>
       <type>string</type>
       <label type="str">Rue</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">rue</varname>
       <display_locations>
         <item>validation</item>
@@ -251,7 +251,7 @@
     <field>
       <type>string</type>
       <label type="str">Num&#233;ro</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">numero</varname>
       <display_locations>
         <item>validation</item>
@@ -270,7 +270,7 @@
     <field>
       <type>string</type>
       <label type="str">Code postal</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">code_postal</varname>
       <display_locations>
         <item>validation</item>
@@ -289,7 +289,7 @@
     <field>
       <type>string</type>
       <label type="str">Localit&#233;</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">localite</varname>
       <display_locations>
         <item>validation</item>

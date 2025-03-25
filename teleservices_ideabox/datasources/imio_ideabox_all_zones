@@ -3,7 +3,7 @@
   <slug>imio_ideabox_all_zones</slug>
   <data_source>
     <type>json</type>
-    <value>{{ eservices_url }}api/cards/imio-ideabox-zone/list</value>
+    <value>{{ eservices_url }}api/cards/imio-ideabox-zone/list?order_by=text</value>
   </data_source>
   <category slug="imio-ideabox" category_id="2">iMio - IDEABOX</category>
 </datasource>

@@ -1,0 +1,10 @@
+<datasource id="219">
+  <name>iMio - IDEABOX - iA.T&#233;l&#233;services - Th&#233;matiques</name>
+  <slug>imio_ideabox_iateleservices_thematiques</slug>
+  <cache_duration>86400</cache_duration>
+  <data_source>
+    <type>json</type>
+    <value>{{ eservices_url }}api/cards/imio-ideabox-theme/list?order_by=text</value>
+  </data_source>
+  <category slug="imio-ideabox" category_id="2">iMio - IDEABOX</category>
+</datasource>

@@ -17,7 +17,7 @@
     <field>
       <type>string</type>
       <label type="str">Intitul&#233; de la campagne</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">titre</varname>
       <display_locations>
         <item>validation</item>
@@ -30,7 +30,7 @@
     <field>
       <type>text</type>
       <label type="str">Description</label>
-      <required type="bool">False</required>
+      <required type="str">optional</required>
       <varname type="str">description</varname>
       <display_locations>
         <item>validation</item>
@@ -43,7 +43,7 @@
     <field>
       <type>date</type>
       <label type="str">D&#233;but</label>
-      <required type="bool">False</required>
+      <required type="str">optional</required>
       <varname type="str">debut</varname>
       <display_locations>
         <item>validation</item>
@@ -59,7 +59,7 @@
     <field>
       <type>date</type>
       <label type="str">Fin</label>
-      <required type="bool">False</required>
+      <required type="str">optional</required>
       <varname type="str">fin</varname>
       <display_locations>
         <item>validation</item>
@@ -75,7 +75,7 @@
     <field>
       <type>items</type>
       <label type="str">Th&#232;mes</label>
-      <required type="bool">False</required>
+      <required type="str">optional</required>
       <hint type="str">&lt;p&gt;Si aucun th&#232;me s&#233;lectionn&#233;, ils seront &lt;strong&gt;tous&lt;/strong&gt; propos&#233;s.&lt;/p&gt;</hint>
       <varname type="str">themes</varname>
       <display_locations>
@@ -87,7 +87,8 @@
       <min_choices type="int">0</min_choices>
       <max_choices type="int">0</max_choices>
       <data_source>
-        <type>carddef:imio-ideabox-theme</type>
+        <type>imio_ideabox_all_themes</type>
+        <value>[{% for i in data_source.imio_ideabox_all_themes %}{{ i|json_dumps }}, {% endfor %}{% for item in webservice.imio_iasmartweb_thematiques.items %}{"id": {{ item|get:"value"|json_dumps }}, "text": {{ item|get:"title"|json_dumps }}}{% if not forloop.last %}, {% endif %}{% endfor %}]</value>
       </data_source>
       <in_filters type="bool">False</in_filters>
       <display_disabled_items type="bool">False</display_disabled_items>
@@ -98,7 +99,7 @@
     <field>
       <type>items</type>
       <label type="str">Zones</label>
-      <required type="bool">False</required>
+      <required type="str">optional</required>
       <hint type="str">&lt;p&gt;Si aucune zone s&#233;lectionn&#233;e, elles seront toutes propos&#233;es.&lt;/p&gt;</hint>
       <varname type="str">zones</varname>
       <display_locations>
@@ -121,7 +122,7 @@
     <field>
       <type>string</type>
       <label type="str">Nombre de vote autoris&#233;</label>
-      <required type="bool">False</required>
+      <required type="str">optional</required>
       <varname type="str">nombre_vote_autorise</varname>
       <display_locations>
         <item>validation</item>

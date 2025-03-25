@@ -1,0 +1,14 @@
+<wscall id="207">
+  <name>iMio - IDEABOX - iA.Smartweb - Th&#233;matiques</name>
+  <slug>imio_iasmartweb_thematiques</slug>
+  <request>
+    <url>{{ ideabox_url_smartweb }}@topics</url>
+    <request_signature_key />
+    <method>GET</method>
+    <timeout />
+    <cache_duration>86400</cache_duration>
+    <qs_data />
+    <post_data />
+  </request>
+  <record_on_errors>true</record_on_errors>
+</wscall>

@@ -24,6 +24,28 @@
           <operation_mode>full</operation_mode>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
+        <item type="choice" id="3">
+          <label>Refuser</label>
+          <status>0</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="4">
+          <label>Accetper</label>
+          <status>1</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
       </items>
     </status>
     <status>
@@ -32,6 +54,14 @@
       <colour>#ef2929</colour>
       <visibility />
       <items>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
         <item type="webservice_call" id="1">
           <method>POST</method>
           <url>{{form_parent_form_url}}/jump/trigger/project_bounced/</url>
@@ -57,6 +87,14 @@
       <colour>#57e389</colour>
       <visibility />
       <items>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
         <item type="webservice_call" id="1">
           <method>POST</method>
           <url>{{form_parent_form_url}}/jump/trigger/project_accepted/</url>
@@ -74,6 +112,43 @@
           <notify_on_errors>False</notify_on_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
+        <item type="choice" id="3">
+          <label>Publier sans possibilit&#233; de vote utl&#233;rieur</label>
+          <status>7</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="4">
+          <label>Publier</label>
+          <status>2</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>7</id>
+      <name>Publi&#233; sans vote</name>
+      <colour>#ffff99</colour>
+      <visibility />
+      <items>
+        <item type="set-backoffice-fields" id="1">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
+        <item type="choice" id="2">
+          <label>D&#233;publier</label>
+          <status>8</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
       </items>
     </status>
     <status>
@@ -81,21 +156,76 @@
       <name>Publi&#233;</name>
       <colour>#f9f06b</colour>
       <visibility />
-      <items />
+      <items>
+        <item type="set-backoffice-fields" id="1">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
+        <item type="choice" id="2">
+          <label>Phase de vote</label>
+          <status>3</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
     </status>
     <status>
       <id>3</id>
       <name>Vote</name>
       <colour>#0099ff</colour>
       <visibility />
-      <items />
+      <items>
+        <item type="set-backoffice-fields" id="1">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
+        <item type="choice" id="2">
+          <label>Cl&#244;turer</label>
+          <status>4</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
     </status>
     <status>
       <id>4</id>
       <name>Cl&#244;ture</name>
       <colour>#c0bfbc</colour>
       <visibility />
-      <items />
+      <items>
+        <item type="set-backoffice-fields" id="1">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
+        <item type="choice" id="2">
+          <label>Rejeter le projet</label>
+          <status>6</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="3">
+          <label>Retenir le projet</label>
+          <status>5</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
     </status>
     <status>
       <id>5</id>
@@ -103,6 +233,14 @@
       <colour>#f5c211</colour>
       <visibility />
       <items>
+        <item type="set-backoffice-fields" id="3">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
         <item type="webservice_call" id="1">
           <method>POST</method>
           <url>{{form_parent_form_url}}/jump/trigger/project_validated/</url>
@@ -120,6 +258,13 @@
           <notify_on_errors>False</notify_on_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
+        <item type="choice" id="4">
+          <label>D&#233;publier</label>
+          <status>8</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
       </items>
     </status>
     <status>
@@ -128,6 +273,14 @@
       <colour>#000000</colour>
       <visibility />
       <items>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
         <item type="webservice_call" id="1">
           <method>POST</method>
           <url>{{form_parent_form_url}}/jump/trigger/project_rejected/</url>
@@ -144,6 +297,29 @@
           <record_on_errors>True</record_on_errors>
           <notify_on_errors>False</notify_on_errors>
           <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="3">
+          <label>D&#233;publier</label>
+          <status>8</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>8</id>
+      <name>D&#233;publi&#233;</name>
+      <colour>#813d9c</colour>
+      <visibility />
+      <items>
+        <item type="set-backoffice-fields" id="1">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
         </item>
       </items>
     </status>
@@ -212,6 +388,37 @@
       </triggers>
     </action>
     <action>
+      <id>12</id>
+      <name>Publier sans possibilit&#233; ult&#233;rieur de voter</name>
+      <items>
+        <item type="jump" id="1">
+          <status>7</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="ecce899f-d616-47ea-8e12-ebf00788d7c1">
+          <roles>
+            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
+          </roles>
+          <statuses>
+            <statuse>1</statuse>
+            <statuse>2</statuse>
+          </statuses>
+          <allow_as_mass_action>True</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
       <id>3</id>
       <name>Publier</name>
       <items>
@@ -235,6 +442,7 @@
           </roles>
           <statuses>
             <statuse>1</statuse>
+            <statuse>7</statuse>
           </statuses>
           <allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
@@ -294,10 +502,13 @@
             <item role_id="_gestion-des-projets">_gestion-des-projets</item>
           </roles>
           <statuses>
-            <statuse>4</statuse>
+            <statuse>3</statuse>
           </statuses>
           <allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
+        </trigger>
+        <trigger type="webservice" id="facfde9e-bb95-4f7c-8485-9dd647f80847">
+          <identifier>close_campaign</identifier>
         </trigger>
       </triggers>
     </action>
@@ -324,7 +535,7 @@
             <item role_id="_gestion-des-projets">_gestion-des-projets</item>
           </roles>
           <statuses>
-            <statuse>5</statuse>
+            <statuse>4</statuse>
             <statuse>6</statuse>
           </statuses>
           <allow_as_mass_action>True</allow_as_mass_action>
@@ -360,6 +571,41 @@
           </statuses>
           <allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>13</id>
+      <name>D&#233;publier</name>
+      <items>
+        <item type="jump" id="1">
+          <status>8</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="set-backoffice-fields" id="2">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="0e0fcb94-830a-4c00-bd86-e750e71b9c21">
+          <roles>
+            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
+          </roles>
+          <statuses>
+            <statuse>5</statuse>
+            <statuse>6</statuse>
+            <statuse>7</statuse>
+          </statuses>
+          <allow_as_mass_action>True</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+        <trigger type="webservice" id="669420ab-bd5d-41c2-99c6-a2f8e01606b3">
+          <identifier>remove_publishing</identifier>
         </trigger>
       </triggers>
     </action>
@@ -413,6 +659,16 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
+        <item type="choice" id="10">
+          <label>Publier sans possibilit&#233; de vote utl&#233;rieur</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>7</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
         <item type="choice" id="4">
           <label>Publier</label>
           <by>
@@ -459,6 +715,16 @@
             <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
           </by>
           <status>6</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="11">
+          <label>D&#233;publier</label>
+          <by>
+            <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
+          </by>
+          <status>8</status>
           <require_confirmation>False</require_confirmation>
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
@@ -530,7 +796,7 @@
         <field>
           <type>string</type>
           <label type="str">Statut</label>
-          <required type="bool">True</required>
+          <required type="str">required</required>
           <varname type="str">statut</varname>
           <display_locations />
           <anonymise type="str">final</anonymise>

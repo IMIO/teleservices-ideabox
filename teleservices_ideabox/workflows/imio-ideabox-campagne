@@ -4,7 +4,7 @@
   <category slug="ideabox" category_id="2">IDEABox</category>
   <roles>
     <role id="_api">API</role>
-    <role id="_editor">&#201;diteur</role>
+    <role id="_editor">Gestionnaire de campagne</role>
     <role id="_viewer">Visualisateur</role>
   </roles>
   <possible_status>
@@ -26,7 +26,7 @@
         <item type="choice" id="2">
           <label>Activer</label>
           <by>
-            <item slug="ideabox-gestion-de-campagne" role_id="34574221a41a499d82fb708c6af9b891">IDEABOX - Gestion de campagne</item>
+            <item role_id="_editor">_editor</item>
           </by>
           <status>0</status>
           <require_confirmation>False</require_confirmation>
@@ -42,12 +42,28 @@
       <visibility />
       <items>
         <item type="choice" id="1">
-          <label>Cl&#244;turer</label>
+          <label>Cl&#244;turer la campagne et les votes</label>
           <by>
-            <item slug="ideabox-gestion-de-campagne" role_id="34574221a41a499d82fb708c6af9b891">IDEABOX - Gestion de campagne</item>
+            <item role_id="_editor">_editor</item>
           </by>
           <status>1</status>
           <require_confirmation>False</require_confirmation>
+          <backoffice_info_text>&lt;p&gt;Les projets dans le statut &lt;strong&gt;Vote&lt;/strong&gt; passeront dans le statut &lt;strong&gt;Cl&amp;ocirc;tur&amp;eacute;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Les projets qui sont publi&amp;eacute;s sans possibilit&amp;eacute; de vote ult&amp;eacute;rieur, statut&amp;nbsp;&lt;strong&gt;Publi&amp;eacute; sans vote&lt;/strong&gt;, ne bougeront pas.&lt;/p&gt;
+</backoffice_info_text>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="choice" id="2">
+          <label>Archiver la campagne</label>
+          <by>
+            <item role_id="_editor">_editor</item>
+          </by>
+          <status>2</status>
+          <require_confirmation>False</require_confirmation>
+          <backoffice_info_text>&lt;p&gt;Archive la campagne. Passe tous les projets dans le statut &lt;strong&gt;D&amp;eacute;publi&amp;eacute;&lt;/strong&gt;.&lt;/p&gt;
+</backoffice_info_text>
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
@@ -62,12 +78,18 @@
         <item type="choice" id="1">
           <label>Archiver</label>
           <by>
-            <item slug="ideabox-gestion-de-campagne" role_id="34574221a41a499d82fb708c6af9b891">IDEABOX - Gestion de campagne</item>
+            <item role_id="_editor">_editor</item>
           </by>
           <status>2</status>
           <require_confirmation>False</require_confirmation>
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="external_workflow_global_action" id="2">
+          <slug>carddef:imio-ideabox-projet</slug>
+          <trigger_id>action:close_campaign</trigger_id>
+          <target_mode>manual</target_mode>
+          <target_id>{{ cards|objects:"imio-ideabox-projet"|filter_by:"statut"|filter_value:"Vote" }}</target_id>
         </item>
       </items>
     </status>
@@ -76,7 +98,14 @@
       <name>Archiv&#233;e</name>
       <colour>#000000</colour>
       <visibility />
-      <items />
+      <items>
+        <item type="external_workflow_global_action" id="1">
+          <slug>carddef:imio-ideabox-projet</slug>
+          <trigger_id>action:remove_publishing</trigger_id>
+          <target_mode>manual</target_mode>
+          <target_id>{{ cards|objects:"imio-ideabox-projet"|filter_by:"statut"|exclude_value:"Refus&#233;" }}</target_id>
+        </item>
+      </items>
     </status>
   </possible_status>
   <global_actions>
