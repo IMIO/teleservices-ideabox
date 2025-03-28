@@ -1,0 +1,620 @@
+<formdef id="85">
+  <name>Proposer un projet</name>
+  <url_name>ideabox-proposer-un-projet</url_name>
+  <submission_user_association>none</submission_user_association>
+  <discussion>false</discussion>
+  <detailed_emails>true</detailed_emails>
+  <disabled>false</disabled>
+  <only_allow_one>false</only_allow_one>
+  <enable_tracking_codes>false</enable_tracking_codes>
+  <confirmation>false</confirmation>
+  <always_advertise>false</always_advertise>
+  <has_captcha>false</has_captcha>
+  <skip_from_360_view>false</skip_from_360_view>
+  <category slug="ideabox" category_id="14">IDEABox</category>
+  <workflow slug="imio-ideabox-proposer-un-projet" workflow_id="52">iMio - IDEABOX - Proposer un projet</workflow>
+  <fields>
+    <field>
+      <type>computed</type>
+      <label type="str">campagne externe</label>
+      <varname type="str">campagne_externe</varname>
+      <value_template type="str">{{request.GET.campagne|default:None}}</value_template>
+      <freeze_on_initial_value type="bool">True</freeze_on_initial_value>
+      <data_source>
+        <type>carddef:imio-ideabox-campagne:active</type>
+      </data_source>
+      <id type="str">a23536c0-406a-4787-a61d-f9ee9229cd32</id>
+    </field>
+    <field>
+      <type>title</type>
+      <label type="str">Identification du projet</label>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <id type="str">1b80ae5d-c351-4d7d-8961-43d6d560fc30</id>
+    </field>
+    <field>
+      <type>subtitle</type>
+      <label type="str">Campagne</label>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <id type="str">602e2d69-c1c7-48db-ae46-fb73931aa91a</id>
+    </field>
+    <field>
+      <type>item</type>
+      <label type="str">Campagne</label>
+      <required type="str">required</required>
+      <varname type="str">campagne</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+        <item>listings</item>
+      </display_locations>
+      <prefill>
+        <locked>True</locked>
+        <locked-unless-empty>True</locked-unless-empty>
+        <type>string</type>
+        <value>{{ form_var_campagne_externe }}</value>
+      </prefill>
+      <anonymise type="str">no</anonymise>
+      <display_mode type="str">list</display_mode>
+      <items />
+      <data_source>
+        <type>carddef:imio-ideabox-campagne:active</type>
+      </data_source>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">0cb4e254-7d5b-4e13-b0e3-8f6c406ab8ae</id>
+    </field>
+    <field>
+      <type>comment</type>
+      <label type="str">&lt;p&gt;{{ form_var_campagne_description|safe }}&lt;/p&gt;
+</label>
+      <display_locations />
+      <id type="str">ad4862c5-e3b6-439e-a363-e535e3f19601</id>
+    </field>
+    <field>
+      <type>subtitle</type>
+      <label type="str">Donn&#233;es g&#233;n&#233;rales</label>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <id type="str">c91a42df-cc81-4f3b-a6c2-778bcda948b0</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Nom du projet</label>
+      <required type="str">required</required>
+      <varname type="str">nom</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+        <item>listings</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <id type="str">e9967881-b8b5-475c-b08e-32f734f9de0b</id>
+    </field>
+    <field>
+      <type>text</type>
+      <label type="str">Description</label>
+      <required type="str">required</required>
+      <varname type="str">description</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <display_mode type="str">rich</display_mode>
+      <id type="str">e9020ac5-e0fa-499e-8234-b19c0f77d484</id>
+    </field>
+    <field>
+      <type>items</type>
+      <label type="str">Th&#232;mes</label>
+      <required type="str">required</required>
+      <varname type="str">themes</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <items />
+      <display_mode type="str">checkboxes</display_mode>
+      <min_choices type="int">0</min_choices>
+      <max_choices type="int">0</max_choices>
+      <data_source>
+        <type>jsonvalue</type>
+        <value>{% if form_var_campagne_live_var_themes_structured %}{{ form_var_campagne_live_var_themes_structured|json_dumps }}{% else %}[{% for i in data_source.imio_ideabox_all_themes %}{{ i|json_dumps }}{% if not forloop.last %}, {% endif %}{% endfor %}]{% endif %}</value>
+      </data_source>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">cd9aac80-2d98-447e-b889-20806ed3e1b1</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Estimation du  budget</label>
+      <required type="str">optional</required>
+      <varname type="str">estimation_budget</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <id type="str">a726e3f0-882b-4d61-860a-5a6061ec13c9</id>
+    </field>
+    <field>
+      <type>text</type>
+      <label type="str">R&#233;partition du budget</label>
+      <condition>
+        <type>django</type>
+        <value>form_var_estimation_budget</value>
+      </condition>
+      <required type="str">required</required>
+      <varname type="str">repartition_budget</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <display_mode type="str">plain</display_mode>
+      <id type="str">9fa1476b-3935-4464-b135-422b7aa39a6a</id>
+    </field>
+    <field>
+      <type>subtitle</type>
+      <label type="str">Localisation du projet</label>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <id type="str">6cbe47b6-6a52-49ac-8294-2fc90cb0fde8</id>
+    </field>
+    <field>
+      <type>items</type>
+      <label type="str">Zones</label>
+      <required type="str">required</required>
+      <varname type="str">zones</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <items />
+      <display_mode type="str">checkboxes</display_mode>
+      <min_choices type="int">0</min_choices>
+      <max_choices type="int">0</max_choices>
+      <data_source>
+        <type>jsonvalue</type>
+        <value>{% if form_var_campagne_live_var_zones_structured %}{{ form_var_campagne_live_var_zones_structured|json_dumps }}{% else %}[{% for i in data_source.imio_ideabox_all_zones %}{{ i|json_dumps }}{% if not forloop.last %}, {% endif %}{% endfor %}]{% endif %}</value>
+      </data_source>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">61c33234-c7ab-4cf8-845e-d5a5ca87b408</id>
+    </field>
+    <field>
+      <type>map</type>
+      <label type="str">G&#233;olocalisation</label>
+      <required type="str">optional</required>
+      <varname type="str">geolocalisation</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <prefill>
+        <type>string</type>
+        <value>{{ commune_name }}</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <initial_position type="str">template</initial_position>
+      <position_template type="str">{{ administration_adresse }}</position_template>
+      <id type="str">3867f08b-a00d-41d1-bfce-dab84e1a2369</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Rue ou lieu-dit</label>
+      <required type="str">required</required>
+      <varname type="str">rue</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">newline grid-3-4</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <locked-unless-empty>False</locked-unless-empty>
+        <type>geolocation</type>
+        <value>road</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <id type="str">80589b4c-7dff-44a1-ba13-99a73fdb61b4</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Num&#233;ro</label>
+      <required type="str">optional</required>
+      <varname type="str">numero</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">grid-1-4</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <locked-unless-empty>False</locked-unless-empty>
+        <type>geolocation</type>
+        <value>house</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <id type="str">c4660c0e-5971-4ba5-bfa9-3a269eff9efa</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Code postal</label>
+      <required type="str">required</required>
+      <varname type="str">code_postal</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">newline grid-1-4</extra_css_class>
+      <prefill>
+        <type>geolocation</type>
+        <value>postcode</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <id type="str">0a992c1c-c263-4da9-952c-0a92fdbaf25d</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Localit&#233;</label>
+      <required type="str">required</required>
+      <varname type="str">localite</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">grid-3-4</extra_css_class>
+      <prefill>
+        <type>geolocation</type>
+        <value>city</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <id type="str">125cab8f-660e-4a2f-acea-04f06dce4036</id>
+    </field>
+    <field>
+      <type>subtitle</type>
+      <label type="str">Images et annexes</label>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <id type="str">b3f412f4-c22b-4c9e-9367-111512d71df2</id>
+    </field>
+    <field>
+      <type>block</type>
+      <label type="str">Ajoutez une image</label>
+      <required type="str">required</required>
+      <hint type="str">&lt;p&gt;Minimum une image.&lt;/p&gt;</hint>
+      <varname type="str">images</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <default_items_count type="int">1</default_items_count>
+      <max_items type="int">50</max_items>
+      <add_element_label type="str">Ajouter une image</add_element_label>
+      <label_display type="str">subtitle</label_display>
+      <remove_button type="bool">True</remove_button>
+      <block_slug type="str">imio_ajouter_une_image</block_slug>
+      <id type="str">c6ab3a44-b215-4eab-8c35-8e1a5aa51fd0</id>
+    </field>
+    <field>
+      <type>block</type>
+      <label type="str">Annexes</label>
+      <required type="str">optional</required>
+      <hint type="str">&lt;p&gt;Optionnel.&lt;/p&gt;</hint>
+      <varname type="str">annexes</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <default_items_count type="int">1</default_items_count>
+      <max_items type="int">50</max_items>
+      <add_element_label type="str">Ajouter une annexe</add_element_label>
+      <label_display type="str">subtitle</label_display>
+      <remove_button type="bool">True</remove_button>
+      <block_slug type="str">ajouter_un_fichier</block_slug>
+      <id type="str">7e873882-8088-4eb4-9d73-76ed6a9eb269</id>
+    </field>
+    <field>
+      <type>title</type>
+      <label type="str">Demandeur</label>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <id type="str">296b0c3d-ea16-4e28-906b-c2c3c9c137d2</id>
+    </field>
+    <field>
+      <type>item</type>
+      <label type="str">Statut du porteur du projet</label>
+      <required type="str">required</required>
+      <hint type="str">&lt;p&gt;S&#233;lectionnez&lt;/p&gt;</hint>
+      <varname type="str">statut_porteur</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">no</anonymise>
+      <display_mode type="str">list</display_mode>
+      <items>
+        <item>Personne physique</item>
+        <item>Autorit&#233; publique</item>
+        <item>ASBL</item>
+        <item>Association de fait</item>
+        <item>Organisation syndicale</item>
+        <item>SRL/SA</item>
+        <item>Autre</item>
+      </items>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">07a1e563-dc87-4857-b3b4-2b8973ee1c93</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Nom de l'organisation</label>
+      <condition>
+        <type>django</type>
+        <value>form_var_statut_porteur and form_var_statut_porteur != "Personne physique"</value>
+      </condition>
+      <required type="str">required</required>
+      <varname type="str">nom_de_organisation</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <id type="str">4a59a12f-a31c-49ad-844a-32175f79bb2d</id>
+    </field>
+    <field>
+      <type>subtitle</type>
+      <label type="str">Coordonn&#233;es du porteur de projet</label>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <id type="str">7e4178d2-650c-44cd-ac1f-9b31d7a1e3ee</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Rue</label>
+      <required type="str">required</required>
+      <varname type="str">rue_porteur</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">grid-1-3</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <locked-unless-empty>False</locked-unless-empty>
+        <type>user</type>
+        <value>_street</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <id type="str">7c413270-3960-4e17-b51a-d1278fb17203</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Num&#233;ro</label>
+      <required type="str">required</required>
+      <varname type="str">numero_porteur</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">grid-1-3</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <locked-unless-empty>False</locked-unless-empty>
+        <type>user</type>
+        <value>_num_house</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <validation>
+        <type>regex</type>
+        <value>^[0-9]*</value>
+      </validation>
+      <id type="str">3afe3a55-4db3-4f3c-a45f-d50ab173b21e</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Bo&#238;te</label>
+      <required type="str">optional</required>
+      <varname type="str">boite_porteur</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">grid-1-3</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <locked-unless-empty>False</locked-unless-empty>
+        <type>user</type>
+        <value>_num_box</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <id type="str">3da89886-52ff-4402-a049-edf5b51fcbd3</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Code postal</label>
+      <required type="str">required</required>
+      <varname type="str">code_postal_porteur</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <locked-unless-empty>False</locked-unless-empty>
+        <type>user</type>
+        <value>_zipcode</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <validation>
+        <type>regex</type>
+        <value>^[0-9]*</value>
+      </validation>
+      <id type="str">0f99b813-8363-4004-93d0-404a929f16c8</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Ville</label>
+      <required type="str">required</required>
+      <varname type="str">ville_porteur</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <locked-unless-empty>False</locked-unless-empty>
+        <type>user</type>
+        <value>_city</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <id type="str">5c004f24-2f5a-4c94-9be2-fd000fe1a1e0</id>
+    </field>
+    <field>
+      <type>subtitle</type>
+      <label type="str">Personne de contact</label>
+      <condition>
+        <type>django</type>
+        <value>form_var_statut_porteur and form_var_statut_porteur != "Personne physique"</value>
+      </condition>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <id type="str">c707e0fe-6022-4faa-bdfe-d4077596ac26</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Nom</label>
+      <required type="str">required</required>
+      <varname type="str">nom_porteur</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <locked-unless-empty>False</locked-unless-empty>
+        <type>user</type>
+        <value>_last_name</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <id type="str">7bbf79bf-08c6-4057-80c2-d7aa3cdc4adc</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Pr&#233;nom</label>
+      <required type="str">required</required>
+      <varname type="str">prenom_porteur</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <locked-unless-empty>False</locked-unless-empty>
+        <type>user</type>
+        <value>_first_name</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <id type="str">7cc1622d-18fe-4be0-8b3a-6aadb6269446</id>
+    </field>
+    <field>
+      <type>string</type>
+      <label type="str">Num&#233;ro de t&#233;l&#233;phone</label>
+      <required type="str">required</required>
+      <varname type="str">telephone_porteur</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">grid-1-4</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <locked-unless-empty>False</locked-unless-empty>
+        <type>user</type>
+        <value>_phone</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <id type="str">b3f24270-5e69-4502-982d-b04ad04b088b</id>
+    </field>
+    <field>
+      <type>email</type>
+      <label type="str">Adresse e-mail</label>
+      <required type="str">required</required>
+      <varname type="str">email_porteur</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <extra_css_class type="str">grid-1-3</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <locked-unless-empty>False</locked-unless-empty>
+        <type>user</type>
+        <value>_email</value>
+      </prefill>
+      <anonymise type="str">final</anonymise>
+      <id type="str">6efe0f27-48ad-4dd9-bf9e-27cde43ff715</id>
+    </field>
+  </fields>
+  <user-roles>
+    <role role_id="logged-users">logged-users</role>
+  </user-roles>
+  <backoffice-submission-roles>
+    <role slug="ideabox-creation-de-projet" role_id="953f23b16aac45428058c5e50214ad96">IDEABOX - Cr&#233;ation de projet</role>
+  </backoffice-submission-roles>
+  <roles>
+    <role slug="ideabox-gestion-de-projet" role_id="e675ef6940ad4cd4b49921b7860c2ee7" role_key="_receiver">IDEABOX - Gestion de projet</role>
+  </roles>
+  <options />
+  <custom_views />
+  <geolocations />
+  <management_sidebar_items>
+    <item>__default__</item>
+  </management_sidebar_items>
+  <workflow-migrations>
+    <migration old-workflow="_carddef_default" new-workflow="imio-ideabox-projet" timestamp="2024-10-08T10:32:44.389712+02:00">
+      <timestamp>2024-10-08T10:32:44.389712+02:00</timestamp>
+      <status-mapping />
+    </migration>
+    <migration old-workflow="_default" new-workflow="imio-ideabox-proposer-un-projet" timestamp="2024-10-08T13:14:26.084649+02:00">
+      <timestamp>2024-10-08T13:14:26.084649+02:00</timestamp>
+      <status-mapping />
+    </migration>
+  </workflow-migrations>
+</formdef>

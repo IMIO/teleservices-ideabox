@@ -14,15 +14,19 @@
       <colour>#FFFFFF</colour>
       <visibility />
       <items>
-        <item type="set-backoffice-fields" id="3">
+        <item type="set-backoffice-fields" id="1">
           <fields>
             <field>
               <field_id>bocff279b9-6027-4958-8635-e857821fcb74</field_id>
               <value>{{ form_var_status }}</value>
             </field>
+            <field>
+              <field_id>boa0ce55e4-e0a2-4933-a6c5-60dc6d404826</field_id>
+              <value>{{ form_var_debut|diff_dates:today }}</value>
+            </field>
           </fields>
         </item>
-        <item type="editable" id="1">
+        <item type="editable" id="2">
           <by>
             <item role_id="_editor">_editor</item>
           </by>
@@ -31,7 +35,7 @@
           <operation_mode>full</operation_mode>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="choice" id="2">
+        <item type="choice" id="3">
           <label>Activer</label>
           <by>
             <item role_id="_editor">_editor</item>
@@ -39,6 +43,12 @@
           <status>0</status>
           <require_confirmation>False</require_confirmation>
           <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="jump" id="4">
+          <status>0</status>
+          <mode>timeout</mode>
+          <timeout>{{ form_var_jours_avant_activation }} jours</timeout>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
@@ -49,15 +59,19 @@
       <colour>#57e389</colour>
       <visibility />
       <items>
-        <item type="set-backoffice-fields" id="3">
+        <item type="set-backoffice-fields" id="1">
           <fields>
             <field>
               <field_id>bocff279b9-6027-4958-8635-e857821fcb74</field_id>
               <value>{{ form_var_status }}</value>
             </field>
+            <field>
+              <field_id>bobadf227b-efd9-4c91-8d7e-cccc935edbcd</field_id>
+              <value>{{ form_var_fin|diff_dates:today }}</value>
+            </field>
           </fields>
         </item>
-        <item type="choice" id="1">
+        <item type="choice" id="2">
           <label>Cl&#244;turer la campagne et les votes</label>
           <by>
             <item role_id="_editor">_editor</item>
@@ -71,7 +85,7 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="choice" id="2">
+        <item type="choice" id="3">
           <label>Archiver la campagne</label>
           <by>
             <item role_id="_editor">_editor</item>
@@ -83,6 +97,12 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
+        <item type="jump" id="4">
+          <status>1</status>
+          <mode>timeout</mode>
+          <timeout>{{ form_var_jours_avant_cloture }} jours</timeout>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
       </items>
     </status>
     <status>
@@ -91,7 +111,7 @@
       <colour>#c0bfbc</colour>
       <visibility />
       <items>
-        <item type="set-backoffice-fields" id="3">
+        <item type="set-backoffice-fields" id="1">
           <fields>
             <field>
               <field_id>bocff279b9-6027-4958-8635-e857821fcb74</field_id>
@@ -99,7 +119,7 @@
             </field>
           </fields>
         </item>
-        <item type="choice" id="1">
+        <item type="choice" id="2">
           <label>Archiver</label>
           <by>
             <item role_id="_editor">_editor</item>
@@ -109,7 +129,7 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="external_workflow_global_action" id="2">
+        <item type="external_workflow_global_action" id="3">
           <slug>carddef:imio-ideabox-projet</slug>
           <trigger_id>action:close_campaign</trigger_id>
           <target_mode>manual</target_mode>
@@ -123,7 +143,7 @@
       <colour>#000000</colour>
       <visibility />
       <items>
-        <item type="set-backoffice-fields" id="2">
+        <item type="set-backoffice-fields" id="1">
           <fields>
             <field>
               <field_id>bocff279b9-6027-4958-8635-e857821fcb74</field_id>
@@ -131,7 +151,7 @@
             </field>
           </fields>
         </item>
-        <item type="external_workflow_global_action" id="1">
+        <item type="external_workflow_global_action" id="2">
           <slug>carddef:imio-ideabox-projet</slug>
           <trigger_id>action:remove_publishing</trigger_id>
           <target_mode>manual</target_mode>
@@ -228,6 +248,30 @@
           </display_locations>
           <anonymise type="str">final</anonymise>
           <id type="str">bocff279b9-6027-4958-8635-e857821fcb74</id>
+        </field>
+        <field>
+          <type>string</type>
+          <label type="str">Jours avant activation</label>
+          <required type="str">required</required>
+          <varname type="str">jours_avant_activation</varname>
+          <display_locations>
+            <item>validation</item>
+            <item>summary</item>
+          </display_locations>
+          <anonymise type="str">final</anonymise>
+          <id type="str">boa0ce55e4-e0a2-4933-a6c5-60dc6d404826</id>
+        </field>
+        <field>
+          <type>string</type>
+          <label type="str">Jours avant cl&#244;ture</label>
+          <required type="str">required</required>
+          <varname type="str">jours_avant_cloture</varname>
+          <display_locations>
+            <item>validation</item>
+            <item>summary</item>
+          </display_locations>
+          <anonymise type="str">final</anonymise>
+          <id type="str">bobadf227b-efd9-4c91-8d7e-cccc935edbcd</id>
         </field>
       </fields>
     </formdef>

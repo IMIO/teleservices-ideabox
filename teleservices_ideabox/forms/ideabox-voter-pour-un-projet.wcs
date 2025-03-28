@@ -32,6 +32,13 @@
           </condition>
           <error_message>Vous avez atteint la limite de vote pour cette campagne.</error_message>
         </post_condition>
+        <post_condition>
+          <condition>
+            <type>django</type>
+            <value>form_user_zipcode in commune_cp|split:","</value>
+          </condition>
+          <error_message>Vous devez habiter {{ commune_name }} pour pouvoir voter</error_message>
+        </post_condition>
       </post_conditions>
       <id type="str">77a4f676-7748-4550-b471-319e0bafa086</id>
     </field>
@@ -79,7 +86,7 @@
     <field>
       <type>item</type>
       <label type="str">Projet</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">projet</varname>
       <display_locations>
         <item>validation</item>

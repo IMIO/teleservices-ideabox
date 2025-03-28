@@ -1,5 +1,5 @@
 <formdef id="86">
-  <name>Commenter un projet</name>
+  <name>Suggestion pour un projet</name>
   <url_name>ideabox-commenter-un-projet</url_name>
   <submission_user_association>any</submission_user_association>
   <discussion>false</discussion>
@@ -28,7 +28,7 @@
     <field>
       <type>item</type>
       <label type="str">Projet</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <hint type="str">&lt;p&gt;S&#233;lectionnez un projet&lt;/p&gt;</hint>
       <varname type="str">projet</varname>
       <display_locations>
@@ -67,7 +67,7 @@
     <field>
       <type>text</type>
       <label type="str">Commentaire</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">commentaire</varname>
       <display_locations>
         <item>validation</item>
@@ -80,7 +80,7 @@
     <field>
       <type>bool</type>
       <label type="str">Publier en votre nom</label>
-      <required type="bool">False</required>
+      <required type="str">optional</required>
       <varname type="str">not_anonyme</varname>
       <display_locations>
         <item>validation</item>

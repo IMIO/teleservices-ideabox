@@ -34,10 +34,7 @@
           <mappings />
           <varname>campagne</varname>
         </item>
-        <item type="register-comment" id="3">
-          <comment>&lt;a href="{{ form_links_campagne_form_backoffice_url }}" target="_blank" rel="noopener noreferrer"&gt;Campagne&lt;/a&gt;</comment>
-        </item>
-        <item type="jump" id="2">
+        <item type="jump" id="3">
           <status>3</status>
           <mode>immediate</mode>
           <set_marker_on_status>False</set_marker_on_status>
@@ -49,7 +46,12 @@
       <name>Campagne cr&#233;&#233;e</name>
       <colour>#57e389</colour>
       <visibility />
-      <items />
+      <items>
+        <item type="register-comment" id="1">
+          <comment>&lt;a class="pk-button" href="{{ form_links_campagne_form_backoffice_url }}" target="_blank" rel="noopener noreferrer"&gt;Campagne&lt;/a&gt;</comment>
+          <level>success</level>
+        </item>
+      </items>
     </status>
   </possible_status>
 </workflow>

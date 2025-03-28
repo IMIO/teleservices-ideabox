@@ -39,7 +39,7 @@
           <varname>projet</varname>
         </item>
         <item type="register-comment" id="2">
-          <comment>&lt;a href="{{ form_links_projet_form_backoffice_url }}" target="_blank" rel="noopener noreferrer"&gt;Projet&lt;/a&gt;</comment>
+          <comment>&lt;p&gt;&lt;a class="pk-button" href="{{ form_links_projet_form_backoffice_url }}" target="_blank" rel="noopener noreferrer"&gt;Projet&lt;/a&gt;&lt;/p&gt;</comment>
           <to>
             <item role_id="_receiver">_receiver</item>
           </to>
@@ -57,21 +57,30 @@
       <colour>#f8e45c</colour>
       <visibility />
       <items>
-        <item type="displaymsg" id="3">
+        <item type="displaymsg" id="1">
           <message>&lt;p&gt;Merci pour votre proposition. Votre projet est &#224; pr&#233;sent soumis &#224; validation aupr&#232;s des autorit&#233;s communales. Vous serez pr&#233;venu par email lorsque celui-ci sera valid&#233; ou refus&#233;.&lt;/p&gt;</message>
           <level>success</level>
           <position>top</position>
         </item>
-        <item type="jump" id="1">
+        <item type="jump" id="2">
           <status>5</status>
           <mode>trigger</mode>
           <trigger>project_bounced</trigger>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="jump" id="2">
+        <item type="jump" id="3">
           <status>4</status>
           <mode>trigger</mode>
           <trigger>project_accepted</trigger>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="editable" id="4">
+          <by>
+            <item role_id="_receiver">_receiver</item>
+            <item role_id="_receiver">_receiver</item>
+          </by>
+          <status>3</status>
+          <operation_mode>full</operation_mode>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
@@ -84,12 +93,14 @@
       <items>
         <item type="sendmail" id="1">
           <to>
-            <item role_id="_receiver">_receiver</item>
+            <item role_id="_submitter">_submitter</item>
           </to>
           <subject>Votre proposition de projet - {{ form_number }} - {{ form_var_nom }}</subject>
           <body>Bonjour,
 
-Votre projet num&#233;ro {{ form_number }} - {{ form_var_nom }} a &#233;t&#233; refus&#233;</body>
+Votre projet num&#233;ro {{ form_number }} - {{ form_var_nom }} a &#233;t&#233; refus&#233;
+
+{{ form_links_projet_form_workflow_data_refus_var_motif }}</body>
         </item>
       </items>
     </status>
@@ -99,22 +110,22 @@ Votre projet num&#233;ro {{ form_number }} - {{ form_var_nom }} a &#233;t&#233; 
       <colour>#57e389</colour>
       <visibility />
       <items>
-        <item type="sendmail" id="3">
+        <item type="sendmail" id="1">
           <to>
-            <item role_id="_receiver">_receiver</item>
+            <item role_id="_submitter">_submitter</item>
           </to>
           <subject>Votre proposition de projet - {{ form_number }} - {{ form_var_nom }}</subject>
           <body>Bonjour,
 
 Votre projet num&#233;ro {{ form_number }} - {{ form_var_nom }} a &#233;t&#233; accept&#233;. Il sera bient&#244;t publi&#233; sur le site de la commune.</body>
         </item>
-        <item type="jump" id="1">
+        <item type="jump" id="2">
           <status>6</status>
           <mode>trigger</mode>
           <trigger>project_validated</trigger>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="jump" id="2">
+        <item type="jump" id="3">
           <status>7</status>
           <mode>trigger</mode>
           <trigger>project_rejected</trigger>
@@ -130,7 +141,7 @@ Votre projet num&#233;ro {{ form_number }} - {{ form_var_nom }} a &#233;t&#233; 
       <items>
         <item type="sendmail" id="1">
           <to>
-            <item role_id="_receiver">_receiver</item>
+            <item role_id="_submitter">_submitter</item>
           </to>
           <subject>Votre proposition de projet - {{ form_number }} - {{ form_var_nom }}</subject>
           <body>Bonjour,
@@ -147,7 +158,7 @@ Votre projet num&#233;ro {{ form_number }} - {{ form_var_nom }} a &#233;t&#233; 
       <items>
         <item type="sendmail" id="1">
           <to>
-            <item role_id="_receiver">_receiver</item>
+            <item role_id="_submitter">_submitter</item>
           </to>
           <subject>Votre proposition de projet - {{ form_number }} - {{ form_var_nom }}</subject>
           <body>Bonjour,

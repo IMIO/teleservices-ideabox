@@ -1,9 +1,0 @@
-<datasource id="45">
-  <name>iMio - IDEABOX - All Themes</name>
-  <slug>imio_ideabox_all_themes</slug>
-  <data_source>
-    <type>jsonvalue</type>
-    <value>[{% for item in data_source.imio_ideabox_iateleservices_thematiques %}{{ item|json_dumps }}, {% endfor %}{% for item in data_source.imio_ideabox_iasmartweb_thematiques %}{{ item|json_dumps }}{% if not forloop.last %}, {% endif %}{% endfor %}]</value>
-  </data_source>
-  <category slug="imio-ideabox" category_id="2">iMio - IDEABOX</category>
-</datasource>

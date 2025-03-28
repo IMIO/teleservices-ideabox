@@ -19,7 +19,7 @@
           <by>
             <item role_id="_editor">_editor</item>
           </by>
-          <status>recorded</status>
+          <status>10</status>
           <label>Modifier la fiche</label>
           <operation_mode>full</operation_mode>
           <set_marker_on_status>False</set_marker_on_status>
@@ -34,7 +34,7 @@
         </item>
         <item type="choice" id="3">
           <label>Refuser</label>
-          <status>0</status>
+          <status>9</status>
           <require_confirmation>False</require_confirmation>
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
@@ -49,12 +49,73 @@
       </items>
     </status>
     <status>
-      <id>0</id>
-      <name>Refus&#233;</name>
-      <colour>#ef2929</colour>
+      <id>10</id>
+      <name>Modification</name>
+      <colour>#FFFFFF</colour>
       <visibility />
       <items>
-        <item type="set-backoffice-fields" id="2">
+        <item type="webservice_call" id="1">
+          <method>POST</method>
+          <url>{{ form_parent_form_api_url }}</url>
+          <post>True</post>
+          <response_type>json</response_type>
+          <store_all_responses>False</store_all_responses>
+          <attach_file_to_history>True</attach_file_to_history>
+          <action_on_app_error>:pass</action_on_app_error>
+          <action_on_4xx>:stop</action_on_4xx>
+          <action_on_5xx>:stop</action_on_5xx>
+          <action_on_bad_data>:pass</action_on_bad_data>
+          <action_on_network_errors>:stop</action_on_network_errors>
+          <record_errors>False</record_errors>
+          <record_on_errors>True</record_on_errors>
+          <notify_on_errors>False</notify_on_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="jump" id="2">
+          <status>recorded</status>
+          <mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>9</id>
+      <name>Motif du refus</name>
+      <colour>#FFFFFF</colour>
+      <visibility />
+      <items>
+        <item type="choice" id="1">
+          <label>Envoyer la notifiaction de refus</label>
+          <by>
+            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
+          </by>
+          <status>0</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="form" id="2">
+          <by>
+            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
+          </by>
+          <varname>refus</varname>
+          <hide_submit_button>True</hide_submit_button>
+          <formdef>
+            <name>-</name>
+            <fields>
+              <field>
+                <type>text</type>
+                <label type="str">Motif</label>
+                <required type="str">required</required>
+                <varname type="str">motif</varname>
+                <display_locations />
+                <display_mode type="str">pre</display_mode>
+                <id type="str">541352d7-f9e9-4301-84c1-a94da02761b1</id>
+              </field>
+            </fields>
+          </formdef>
+        </item>
+        <item type="set-backoffice-fields" id="3">
           <fields>
             <field>
               <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
@@ -62,7 +123,23 @@
             </field>
           </fields>
         </item>
-        <item type="webservice_call" id="1">
+      </items>
+    </status>
+    <status>
+      <id>0</id>
+      <name>Refus&#233;</name>
+      <colour>#ef2929</colour>
+      <visibility />
+      <items>
+        <item type="set-backoffice-fields" id="1">
+          <fields>
+            <field>
+              <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
+              <value>{{ form_status }}</value>
+            </field>
+          </fields>
+        </item>
+        <item type="webservice_call" id="2">
           <method>POST</method>
           <url>{{form_parent_form_url}}/jump/trigger/project_bounced/</url>
           <post>False</post>
@@ -87,7 +164,7 @@
       <colour>#57e389</colour>
       <visibility />
       <items>
-        <item type="set-backoffice-fields" id="2">
+        <item type="set-backoffice-fields" id="1">
           <fields>
             <field>
               <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
@@ -95,7 +172,7 @@
             </field>
           </fields>
         </item>
-        <item type="webservice_call" id="1">
+        <item type="webservice_call" id="2">
           <method>POST</method>
           <url>{{form_parent_form_url}}/jump/trigger/project_accepted/</url>
           <post>False</post>
@@ -233,7 +310,7 @@
       <colour>#f5c211</colour>
       <visibility />
       <items>
-        <item type="set-backoffice-fields" id="3">
+        <item type="set-backoffice-fields" id="1">
           <fields>
             <field>
               <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
@@ -241,7 +318,7 @@
             </field>
           </fields>
         </item>
-        <item type="webservice_call" id="1">
+        <item type="webservice_call" id="2">
           <method>POST</method>
           <url>{{form_parent_form_url}}/jump/trigger/project_validated/</url>
           <post>False</post>
@@ -258,7 +335,7 @@
           <notify_on_errors>False</notify_on_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="choice" id="4">
+        <item type="choice" id="3">
           <label>D&#233;publier</label>
           <status>8</status>
           <require_confirmation>False</require_confirmation>
@@ -273,7 +350,7 @@
       <colour>#000000</colour>
       <visibility />
       <items>
-        <item type="set-backoffice-fields" id="2">
+        <item type="set-backoffice-fields" id="1">
           <fields>
             <field>
               <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
@@ -281,7 +358,7 @@
             </field>
           </fields>
         </item>
-        <item type="webservice_call" id="1">
+        <item type="webservice_call" id="2">
           <method>POST</method>
           <url>{{form_parent_form_url}}/jump/trigger/project_rejected/</url>
           <post>False</post>
@@ -330,7 +407,7 @@
       <name>Refuser</name>
       <items>
         <item type="jump" id="1">
-          <status>0</status>
+          <status>9</status>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
         <item type="set-backoffice-fields" id="2">
@@ -618,7 +695,7 @@
       <triggers>
         <trigger type="manual" id="a7b1c1db-6337-4e9b-baf6-fa4f34d2268e">
           <roles>
-            <item slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</item>
+            <item slug="debug" role_id="08b4ba67eb2d421ea88d4bb0256a9666">Debug</item>
           </roles>
           <allow_as_mass_action>False</allow_as_mass_action>
           <require_confirmation>True</require_confirmation>
@@ -659,7 +736,7 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="choice" id="10">
+        <item type="choice" id="4">
           <label>Publier sans possibilit&#233; de vote utl&#233;rieur</label>
           <by>
             <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
@@ -669,7 +746,7 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="choice" id="4">
+        <item type="choice" id="5">
           <label>Publier</label>
           <by>
             <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
@@ -679,7 +756,7 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="choice" id="5">
+        <item type="choice" id="6">
           <label>Phase de vote</label>
           <by>
             <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
@@ -689,7 +766,7 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="choice" id="6">
+        <item type="choice" id="7">
           <label>Cl&#244;turer</label>
           <by>
             <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
@@ -699,7 +776,7 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="choice" id="7">
+        <item type="choice" id="8">
           <label>Retenir le projet</label>
           <by>
             <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
@@ -709,7 +786,7 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="choice" id="8">
+        <item type="choice" id="9">
           <label>Rejeter</label>
           <by>
             <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
@@ -719,7 +796,7 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="choice" id="11">
+        <item type="choice" id="10">
           <label>D&#233;publier</label>
           <by>
             <item slug="administrateur-ideabox" role_id="b4f55157e7214d6ebbbd18c2adfb0bbb">Administrateur IDEABOX</item>
@@ -729,7 +806,7 @@
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="set-backoffice-fields" id="9">
+        <item type="set-backoffice-fields" id="11">
           <fields>
             <field>
               <field_id>bo6f2c82dc-5d21-4c1c-9bc8-08a7a2cde919</field_id>
@@ -785,6 +862,26 @@
       <triggers>
         <trigger type="webservice" id="6a8781f2-9778-4087-ac65-f702195ef6cd">
           <identifier>vote_contre</identifier>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>14</id>
+      <name>Notification nouvelle suggestion</name>
+      <items>
+        <item type="sendmail" id="1">
+          <to>
+            <item role_id="{{ form_var_email_porteur }}">{{ form_var_email_porteur }}</item>
+          </to>
+          <subject>Nouvelle suggestion pour votre proposition de projet - {{ form_number }} - {{ form_var_nom }}</subject>
+          <body>Bonjour,
+
+Une nouvelle suggestion est arriv&#233;e pour votre proposition de projet **{{ form_var_nom }}**</body>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="webservice" id="fc822575-14af-4ff4-a331-4a2b1ae26ffa">
+          <identifier>notif_commentaire</identifier>
         </trigger>
       </triggers>
     </action>

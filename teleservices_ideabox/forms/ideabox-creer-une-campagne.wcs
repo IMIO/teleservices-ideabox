@@ -1,6 +1,6 @@
-<carddef id="21">
-  <name>iMio - IDEABOX - Campagne</name>
-  <url_name>imio-ideabox-campagne</url_name>
+<formdef id="88">
+  <name>Cr&#233;er une Campagne</name>
+  <url_name>ideabox-creer-une-campagne</url_name>
   <submission_user_association>none</submission_user_association>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
@@ -11,8 +11,8 @@
   <always_advertise>false</always_advertise>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
-  <category slug="ideabox" category_id="1">IDEABox</category>
-  <workflow slug="imio-ideabox-campagne" workflow_id="50">iMio - IDEABOX - Campagne</workflow>
+  <category slug="ideabox" category_id="14">IDEABox</category>
+  <workflow slug="imio-ideabox-creer-campagne" workflow_id="51">iMio - IDEABOX - Cr&#233;er Campagne</workflow>
   <fields>
     <field>
       <type>string</type>
@@ -42,7 +42,7 @@
     </field>
     <field>
       <type>date</type>
-      <label type="str">D&#233;but</label>
+      <label type="str">D&#233;but de l'affichage</label>
       <required type="str">optional</required>
       <varname type="str">debut</varname>
       <display_locations>
@@ -51,14 +51,14 @@
         <item>listings</item>
       </display_locations>
       <anonymise type="str">final</anonymise>
-      <minimum_is_future type="bool">False</minimum_is_future>
+      <minimum_is_future type="bool">True</minimum_is_future>
       <date_in_the_past type="bool">False</date_in_the_past>
       <date_can_be_today type="bool">False</date_can_be_today>
       <id type="str">59e65528-024d-4787-b7c4-01184023a5b3</id>
     </field>
     <field>
       <type>date</type>
-      <label type="str">Fin</label>
+      <label type="str">Cl&#244;ture des votes</label>
       <required type="str">optional</required>
       <varname type="str">fin</varname>
       <display_locations>
@@ -67,7 +67,7 @@
         <item>listings</item>
       </display_locations>
       <anonymise type="str">final</anonymise>
-      <minimum_is_future type="bool">False</minimum_is_future>
+      <minimum_is_future type="bool">True</minimum_is_future>
       <date_in_the_past type="bool">False</date_in_the_past>
       <date_can_be_today type="bool">False</date_can_be_today>
       <id type="str">22e1355d-3e5a-470e-9370-4e649d5c1d88</id>
@@ -97,6 +97,13 @@
       <id type="str">71d8eff8-d6d4-4811-a96c-795d1e1d8cc7</id>
     </field>
     <field>
+      <type>comment</type>
+      <label type="str">&lt;p&gt;&lt;a href="{{ eservices_url }}backoffice/data/imio-ideabox-theme/add/" rel="noopener noreferrer nofollow" target="_blank"&gt;Ajouter un th&amp;egrave;me qui n&amp;#39;est pas dans la liste&lt;/a&gt;&lt;/p&gt;
+</label>
+      <display_locations />
+      <id type="str">8ac15e83-eef5-43ec-af74-11879f58f629</id>
+    </field>
+    <field>
       <type>items</type>
       <label type="str">Zones</label>
       <required type="str">optional</required>
@@ -107,6 +114,7 @@
         <item>summary</item>
       </display_locations>
       <anonymise type="str">final</anonymise>
+      <items />
       <display_mode type="str">checkboxes</display_mode>
       <min_choices type="int">0</min_choices>
       <max_choices type="int">0</max_choices>
@@ -120,9 +128,17 @@
       <id type="str">6dc7d2a5-69e9-42c0-a836-5115eb84bbd7</id>
     </field>
     <field>
+      <type>comment</type>
+      <label type="str">&lt;p&gt;&lt;a href="{{ eservices_url }}backoffice/data/imio-ideabox-zone/add/" target="_blank" rel="noopener noreferrer nofollow"&gt;Ajouter une zone qui n&amp;#39;est pas dans liste&lt;/a&gt;&lt;/p&gt;
+</label>
+      <display_locations />
+      <id type="str">e0cd78c0-f2f6-48b6-895a-b69edb6c08cf</id>
+    </field>
+    <field>
       <type>string</type>
       <label type="str">Nombre de vote autoris&#233;</label>
       <required type="str">optional</required>
+      <hint type="str">&lt;p&gt;Les citoyens pourront voter pour autant de projets propos&#233;s dans cette campagne que le nombre indiqu&#233;. Si aucun nombre n'est indiqu&#233;, les citoyens pourront voter pour tous les projets.&lt;/p&gt;</hint>
       <varname type="str">nombre_vote_autorise</varname>
       <display_locations>
         <item>validation</item>
@@ -137,14 +153,10 @@
     </field>
   </fields>
   <user-roles>
-    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</role>
+    <role slug="ideabox-creation-de-campagne" role_id="5395718e4a774a2c86ad0cbe48919d60">IDEABOX - Cr&#233;ation de campagne</role>
   </user-roles>
-  <backoffice-submission-roles>
-    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</role>
-  </backoffice-submission-roles>
   <roles>
-    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a" role_key="_editor">Debug</role>
-    <role slug="api-ideabox" role_id="c2ce2ec872814abb99e5e24a02b1e31c" role_key="_api">API IDEABox</role>
+    <role slug="ideabox-creation-de-campagne" role_id="5395718e4a774a2c86ad0cbe48919d60" role_key="_receiver">IDEABOX - Cr&#233;ation de campagne</role>
   </roles>
   <options />
   <custom_views>
@@ -191,11 +203,6 @@
   <management_sidebar_items>
     <item>__default__</item>
   </management_sidebar_items>
-  <digest_templates>
-    <template key="custom-view:active">{{ form_var_titre }}</template>
-    <template key="custom-view:par-defaut">{{ form_var_titre }}</template>
-    <template key="default">{{ form_var_titre }}</template>
-  </digest_templates>
   <workflow-migrations>
     <migration old-workflow="_carddef_default" new-workflow="imio-ideabox-campagne" timestamp="2024-10-08T11:03:38.211477+02:00">
       <timestamp>2024-10-08T11:03:38.211477+02:00</timestamp>
@@ -205,4 +212,4 @@
       </status-mapping>
     </migration>
   </workflow-migrations>
-</carddef>
+</formdef>
