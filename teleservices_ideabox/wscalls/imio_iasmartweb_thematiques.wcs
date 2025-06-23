@@ -7,7 +7,9 @@
     <method>GET</method>
     <timeout />
     <cache_duration>86400</cache_duration>
-    <qs_data />
+    <qs_data>
+      <param key="imio_app">True</param>
+    </qs_data>
     <post_data />
   </request>
   <record_on_errors>true</record_on_errors>
