@@ -2,6 +2,7 @@
   <name>Proposer un projet</name>
   <url_name>ideabox-proposer-un-projet</url_name>
   <submission_user_association>none</submission_user_association>
+  <history_pane_default_mode>expanded</history_pane_default_mode>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>
@@ -210,12 +211,13 @@
         <item>summary</item>
       </display_locations>
       <prefill>
+        <locked>False</locked>
+        <locked-unless-empty>False</locked-unless-empty>
         <type>string</type>
         <value>{{ commune_name }}</value>
       </prefill>
       <anonymise type="str">final</anonymise>
-      <initial_position type="str">template</initial_position>
-      <position_template type="str">{{ administration_adresse }}</position_template>
+      <position_template type="str">{{ commune_slug }}</position_template>
       <id type="str">3867f08b-a00d-41d1-bfce-dab84e1a2369</id>
     </field>
     <field>
