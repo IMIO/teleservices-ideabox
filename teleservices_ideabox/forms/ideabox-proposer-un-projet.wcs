@@ -222,7 +222,7 @@
     <field>
       <type>string</type>
       <label type="str">Rue ou lieu-dit</label>
-      <required type="str">required</required>
+      <required type="str">optional</required>
       <varname type="str">rue</varname>
       <display_locations>
         <item>validation</item>
@@ -260,7 +260,7 @@
     <field>
       <type>string</type>
       <label type="str">Code postal</label>
-      <required type="str">required</required>
+      <required type="str">optional</required>
       <varname type="str">code_postal</varname>
       <display_locations>
         <item>validation</item>
@@ -277,7 +277,7 @@
     <field>
       <type>string</type>
       <label type="str">Localit&#233;</label>
-      <required type="str">required</required>
+      <required type="str">optional</required>
       <varname type="str">localite</varname>
       <display_locations>
         <item>validation</item>

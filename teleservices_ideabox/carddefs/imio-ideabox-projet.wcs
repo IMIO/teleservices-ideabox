@@ -184,7 +184,7 @@
     <field>
       <type>string</type>
       <label type="str">Rue ou lieu-dit</label>
-      <required type="str">required</required>
+      <required type="str">optional</required>
       <varname type="str">rue</varname>
       <display_locations>
         <item>validation</item>
@@ -208,7 +208,7 @@
     <field>
       <type>string</type>
       <label type="str">Code postal</label>
-      <required type="str">required</required>
+      <required type="str">optional</required>
       <varname type="str">code_postal</varname>
       <display_locations>
         <item>validation</item>
@@ -220,7 +220,7 @@
     <field>
       <type>string</type>
       <label type="str">Localit&#233;</label>
-      <required type="str">required</required>
+      <required type="str">optional</required>
       <varname type="str">localite</varname>
       <display_locations>
         <item>validation</item>
@@ -632,7 +632,7 @@
     <role slug="debug" role_id="08b4ba67eb2d421ea88d4bb0256a9666">Debug</role>
   </backoffice-submission-roles>
   <roles>
-    <role slug="debug" role_id="08b4ba67eb2d421ea88d4bb0256a9666" role_key="_editor">Debug</role>
+    <role slug="ideabox-gestion-de-projet" role_id="e675ef6940ad4cd4b49921b7860c2ee7" role_key="_editor">IDEABOX - Gestion de projet</role>
     <role slug="api-ideabox" role_id="c2ce2ec872814abb99e5e24a02b1e31c" role_key="_api">API IDEABox</role>
     <role slug="debug" role_id="08b4ba67eb2d421ea88d4bb0256a9666" role_key="_viewer">Debug</role>
     <role slug="ideabox-gestion-de-projet" role_id="e675ef6940ad4cd4b49921b7860c2ee7" role_key="_gestion-des-projets">IDEABOX - Gestion de projet</role>
