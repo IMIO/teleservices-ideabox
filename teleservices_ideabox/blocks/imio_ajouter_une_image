@@ -5,7 +5,7 @@
     <field>
       <type>file</type>
       <label type="str">Image</label>
-      <required type="bool">True</required>
+      <required type="str">required</required>
       <varname type="str">image</varname>
       <display_locations>
         <item>validation</item>

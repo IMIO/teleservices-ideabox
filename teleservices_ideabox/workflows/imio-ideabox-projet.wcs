@@ -835,7 +835,7 @@
           <target_mode>manual</target_mode>
           <target_id>{{ form_internal_id }}</target_id>
           <mappings>
-            <mapping field_id="3df2a9e2-c923-4ae4-9339-2eb0f84fcf95">{{ form_var_voter_pour|add:1 }}</mapping>
+            <mapping field_id="3df2a9e2-c923-4ae4-9339-2eb0f84fcf95">{{ form_var_votes_pour|add:1 }}</mapping>
           </mappings>
         </item>
       </items>
@@ -855,7 +855,7 @@
           <target_mode>manual</target_mode>
           <target_id>{{ form_internal_id }}</target_id>
           <mappings>
-            <mapping field_id="a6a02161-3b6c-4a84-8d1b-2397e8c14092">{{ form_var_voter_contre|add:1 }}</mapping>
+            <mapping field_id="a6a02161-3b6c-4a84-8d1b-2397e8c14092">{{ form_var_votes_contre|add:1 }}</mapping>
           </mappings>
         </item>
       </items>

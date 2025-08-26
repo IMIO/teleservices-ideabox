@@ -155,7 +155,7 @@
     <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a">Debug</role>
   </backoffice-submission-roles>
   <roles>
-    <role slug="debug" role_id="6d2c55fe2ea44e41b7f8111b93f1930a" role_key="_editor">Debug</role>
+    <role slug="ideabox-gestion-de-campagne" role_id="34574221a41a499d82fb708c6af9b891" role_key="_editor">IDEABOX - Gestion de campagne</role>
     <role slug="api-ideabox" role_id="c2ce2ec872814abb99e5e24a02b1e31c" role_key="_api">API IDEABox</role>
   </roles>
   <options />
@@ -203,6 +203,9 @@
   <management_sidebar_items>
     <item>__default__</item>
   </management_sidebar_items>
+  <submission_sidebar_items>
+    <item>__default__</item>
+  </submission_sidebar_items>
   <digest_templates>
     <template key="custom-view:active">{{ form_var_titre }}</template>
     <template key="custom-view:par-defaut">{{ form_var_titre }}</template>

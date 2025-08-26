@@ -151,6 +151,18 @@
       </validation>
       <id type="str">0a7d87bc-8d57-435c-8222-236ffed24f63</id>
     </field>
+    <field>
+      <type>bool</type>
+      <label type="str">Activation des votes "contre"</label>
+      <required type="str">optional</required>
+      <varname type="str">activation_votes_contre</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">no</anonymise>
+      <id type="str">ced0ac25-505b-4f93-82b3-6d7c1b9f08b2</id>
+    </field>
   </fields>
   <user-roles>
     <role slug="ideabox-creation-de-campagne" role_id="5395718e4a774a2c86ad0cbe48919d60">IDEABOX - Cr&#233;ation de campagne</role>

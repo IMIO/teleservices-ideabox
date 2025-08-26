@@ -37,7 +37,7 @@
     </field>
     <field>
       <type>subtitle</type>
-      <label type="str">Campagne</label>
+      <label type="str">Campagne associ&#233;e au projet</label>
       <display_locations>
         <item>validation</item>
         <item>summary</item>
@@ -217,7 +217,6 @@
         <value>{{ commune_name }}</value>
       </prefill>
       <anonymise type="str">final</anonymise>
-      <position_template type="str">{{ commune_slug }}</position_template>
       <id type="str">3867f08b-a00d-41d1-bfce-dab84e1a2369</id>
     </field>
     <field>
@@ -341,7 +340,7 @@
     </field>
     <field>
       <type>title</type>
-      <label type="str">Demandeur</label>
+      <label type="str">Porteur du projet</label>
       <display_locations>
         <item>validation</item>
         <item>summary</item>
@@ -609,6 +608,9 @@
   <management_sidebar_items>
     <item>__default__</item>
   </management_sidebar_items>
+  <submission_sidebar_items>
+    <item>__default__</item>
+  </submission_sidebar_items>
   <workflow-migrations>
     <migration old-workflow="_carddef_default" new-workflow="imio-ideabox-projet" timestamp="2024-10-08T10:32:44.389712+02:00">
       <timestamp>2024-10-08T10:32:44.389712+02:00</timestamp>

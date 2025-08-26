@@ -26,6 +26,32 @@
             </field>
           </fields>
         </item>
+        <item type="edit_carddata" id="5">
+          <action_label>Modification des th&#232;mes</action_label>
+          <formdef_slug>imio-ideabox-campagne</formdef_slug>
+          <target_mode>manual</target_mode>
+          <target_id>{{ form_internal_id }}</target_id>
+          <mappings>
+            <mapping field_id="71d8eff8-d6d4-4811-a96c-795d1e1d8cc7">{% for theme in data_source.imio_ideabox_all_themes %}{{ theme.id }}{% if not forloop.last %}|{% endif %}{% endfor %}</mapping>
+          </mappings>
+          <condition>
+            <type>django</type>
+            <value>not form_var_themes</value>
+          </condition>
+        </item>
+        <item type="edit_carddata" id="6">
+          <action_label>Modification Zone</action_label>
+          <formdef_slug>imio-ideabox-campagne</formdef_slug>
+          <target_mode>manual</target_mode>
+          <target_id>{{ form_internal_id }}</target_id>
+          <mappings>
+            <mapping field_id="6dc7d2a5-69e9-42c0-a836-5115eb84bbd7">{% for zone in data_source.imio_ideabox_all_zones %}{{ zone.id }}{% if not forloop.last %}|{% endif %}{% endfor %}</mapping>
+          </mappings>
+          <condition>
+            <type>django</type>
+            <value>not form_var_zones</value>
+          </condition>
+        </item>
         <item type="editable" id="2">
           <by>
             <item role_id="_editor">_editor</item>
@@ -134,6 +160,16 @@
           <trigger_id>action:close_campaign</trigger_id>
           <target_mode>manual</target_mode>
           <target_id>{{ cards|objects:"imio-ideabox-projet"|filter_by:"statut"|filter_value:"Vote" }}</target_id>
+        </item>
+        <item type="choice" id="4">
+          <label>revenir &#224; active</label>
+          <by>
+            <item slug="debug" role_id="08b4ba67eb2d421ea88d4bb0256a9666">Debug</item>
+          </by>
+          <status>0</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
     </status>

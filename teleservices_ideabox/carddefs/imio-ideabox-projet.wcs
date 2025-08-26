@@ -744,6 +744,9 @@
   <management_sidebar_items>
     <item>__default__</item>
   </management_sidebar_items>
+  <submission_sidebar_items>
+    <item>__default__</item>
+  </submission_sidebar_items>
   <digest_templates>
     <template key="custom-view:affichage">{{ form_var_nom }}</template>
     <template key="custom-view:commentaire">{{ form_var_nom }}</template>

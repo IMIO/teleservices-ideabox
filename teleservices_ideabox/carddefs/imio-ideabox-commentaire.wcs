@@ -120,6 +120,9 @@
   <management_sidebar_items>
     <item>__default__</item>
   </management_sidebar_items>
+  <submission_sidebar_items>
+    <item>__default__</item>
+  </submission_sidebar_items>
   <workflow-migrations>
     <migration old-workflow="_carddef_default" new-workflow="imio-ideabox-commentaire" timestamp="2024-10-08T11:09:04.838073+02:00">
       <timestamp>2024-10-08T11:09:04.838073+02:00</timestamp>

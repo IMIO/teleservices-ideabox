@@ -2,6 +2,7 @@
   <name>Voter pour un projet</name>
   <url_name>ideabox-voter-pour-un-projet</url_name>
   <submission_user_association>any</submission_user_association>
+  <history_pane_default_mode>expanded</history_pane_default_mode>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>
@@ -137,6 +138,9 @@
   <management_sidebar_items>
     <item>__default__</item>
   </management_sidebar_items>
+  <submission_sidebar_items>
+    <item>__default__</item>
+  </submission_sidebar_items>
   <workflow-migrations>
     <migration old-workflow="_default" new-workflow="imio-ideabox-vote-pour" timestamp="2024-10-08T15:23:10.782966+02:00">
       <timestamp>2024-10-08T15:23:10.782966+02:00</timestamp>
