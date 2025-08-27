@@ -520,6 +520,7 @@
           <statuses>
             <statuse>1</statuse>
             <statuse>7</statuse>
+            <statuse>8</statuse>
           </statuses>
           <allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
