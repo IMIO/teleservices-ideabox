@@ -250,6 +250,14 @@
       <id type="str">b3f412f4-c22b-4c9e-9367-111512d71df2</id>
     </field>
     <field>
+      <type>comment</type>
+      <label type="str">&lt;p&gt;Veuillez choisir une image libre de droit.&lt;/p&gt;
+</label>
+      <extra_css_class type="str">pk-information</extra_css_class>
+      <display_locations />
+      <id type="str">24dbb24c-d6af-403e-9740-54a298ec4cd5</id>
+    </field>
+    <field>
       <type>block</type>
       <label type="str">Images</label>
       <required type="str">required</required>
