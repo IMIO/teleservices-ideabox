@@ -24,7 +24,7 @@
             <type>django</type>
             <value>cards|objects:"imio-ideabox-vote"|filter_by:"projet"|filter_value:form_var_projet|filter_by_user:form_user|first|is_empty</value>
           </condition>
-          <error_message>Vous avez d&#233;j&#224; vot&#233; pour ce projet.</error_message>
+          <error_message>Vous avez d&#233;j&#224; exprim&#233; votre vote pour ce projet.</error_message>
         </post_condition>
         <post_condition>
           <condition>
@@ -56,7 +56,7 @@
     </field>
     <field>
       <type>comment</type>
-      <label type="str">&lt;h3&gt;Vous avez d&amp;eacute;j&amp;agrave; vot&amp;eacute; pour ce projet.&lt;/h3&gt;
+      <label type="str">&lt;h3&gt;Vous avez d&amp;eacute;j&amp;agrave; exprim&amp;eacute; votre vote pour ce projet.&lt;/h3&gt;
 </label>
       <condition>
         <type>django</type>
