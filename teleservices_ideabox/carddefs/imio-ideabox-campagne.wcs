@@ -120,6 +120,28 @@
       <id type="str">6dc7d2a5-69e9-42c0-a836-5115eb84bbd7</id>
     </field>
     <field>
+      <type>item</type>
+      <label type="str">Rendre obligatoire l'estimation de budget pour les projets</label>
+      <required type="str">required</required>
+      <varname type="str">estimation_budget_obligatoire</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">no</anonymise>
+      <display_mode type="str">radio</display_mode>
+      <items>
+        <item>Oui</item>
+        <item>Non</item>
+      </items>
+      <in_filters type="bool">False</in_filters>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
+      <id type="str">f5e6f85f-6cf0-46da-83ce-1493a5a670ef</id>
+    </field>
+    <field>
       <type>string</type>
       <label type="str">Nombre de vote autoris&#233;</label>
       <required type="str">optional</required>

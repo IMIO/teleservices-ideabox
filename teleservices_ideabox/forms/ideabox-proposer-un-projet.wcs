@@ -16,6 +16,20 @@
   <workflow slug="imio-ideabox-proposer-un-projet" workflow_id="52">iMio - IDEABOX - Proposer un projet</workflow>
   <fields>
     <field>
+      <type>page</type>
+      <label type="str">Proposer un projet</label>
+      <post_conditions>
+        <post_condition>
+          <condition>
+            <type>django</type>
+            <value>form_var_campagne_live_var_estimation_budget_obligatoire|default_if_none:"Non" == "Non" or form_var_campagne_live_var_estimation_budget_obligatoire == "Oui" and form_var_estimation_budget</value>
+          </condition>
+          <error_message>Les projets de cette campagne n&#233;cessitent une estimation de budget.</error_message>
+        </post_condition>
+      </post_conditions>
+      <id type="str">5289799a-37c7-43f1-b44b-f27fdb37a40b</id>
+    </field>
+    <field>
       <type>computed</type>
       <label type="str">campagne externe</label>
       <varname type="str">campagne_externe</varname>
@@ -138,6 +152,18 @@
       <image_desktop_size type="str">150</image_desktop_size>
       <image_mobile_size type="str">75</image_mobile_size>
       <id type="str">cd9aac80-2d98-447e-b889-20806ed3e1b1</id>
+    </field>
+    <field>
+      <type>comment</type>
+      <label type="str">&lt;p&gt;Les projets de cette campagne n&amp;eacute;cessitent une estimation de budget.&lt;/p&gt;
+</label>
+      <condition>
+        <type>django</type>
+        <value>form_var_campagne_live_var_estimation_budget_obligatoire == "Oui"</value>
+      </condition>
+      <extra_css_class type="str">pk-information</extra_css_class>
+      <display_locations />
+      <id type="str">74901a56-c8ae-49eb-84cd-faa1f5676b0e</id>
     </field>
     <field>
       <type>string</type>
