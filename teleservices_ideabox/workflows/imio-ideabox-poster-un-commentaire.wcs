@@ -51,6 +51,15 @@
           <trigger>comment_reject</trigger>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
+        <item type="register-comment" id="4">
+          <to>
+            <item role_id="_submitter">_submitter</item>
+          </to>
+          <comment>&lt;p&gt;
+&lt;a href="{{ideabox_url_smartweb}}" class="pk-button"&gt;Revenir sur le site web&lt;/a&gt;
+&lt;p&gt;</comment>
+          <level>info</level>
+        </item>
       </items>
     </status>
     <status>
