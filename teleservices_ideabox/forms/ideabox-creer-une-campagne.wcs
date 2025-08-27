@@ -15,6 +15,18 @@
   <workflow slug="imio-ideabox-creer-campagne" workflow_id="51">iMio - IDEABOX - Cr&#233;er Campagne</workflow>
   <fields>
     <field>
+      <type>comment</type>
+      <label type="str">&lt;p&gt;&lt;a class="pk-button" href="{{ eservices_url }}backoffice/data/imio-ideabox-theme/add/" rel="noopener noreferrer nofollow" target="_blank"&gt;Ajouter un th&amp;egrave;me qui n&amp;#39;est pas dans la liste&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a class="pk-button" href="{{ eservices_url }}backoffice/data/imio-ideabox-zone/add/" rel="noopener noreferrer nofollow" target="_blank"&gt;Ajouter une zone qui n&amp;#39;est pas dans liste&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Faites-le avant de remplir le formulaire et actualiser la page ensuite.&lt;/p&gt;
+</label>
+      <extra_css_class type="str">pk-attention</extra_css_class>
+      <display_locations />
+      <id type="str">8ac15e83-eef5-43ec-af74-11879f58f629</id>
+    </field>
+    <field>
       <type>string</type>
       <label type="str">Intitul&#233; de la campagne</label>
       <required type="str">required</required>
@@ -97,13 +109,6 @@
       <id type="str">71d8eff8-d6d4-4811-a96c-795d1e1d8cc7</id>
     </field>
     <field>
-      <type>comment</type>
-      <label type="str">&lt;p&gt;&lt;a href="{{ eservices_url }}backoffice/data/imio-ideabox-theme/add/" rel="noopener noreferrer nofollow" target="_blank"&gt;Ajouter un th&amp;egrave;me qui n&amp;#39;est pas dans la liste&lt;/a&gt;&lt;/p&gt;
-</label>
-      <display_locations />
-      <id type="str">8ac15e83-eef5-43ec-af74-11879f58f629</id>
-    </field>
-    <field>
       <type>items</type>
       <label type="str">Zones</label>
       <required type="str">optional</required>
@@ -126,13 +131,6 @@
       <image_desktop_size type="str">150</image_desktop_size>
       <image_mobile_size type="str">75</image_mobile_size>
       <id type="str">6dc7d2a5-69e9-42c0-a836-5115eb84bbd7</id>
-    </field>
-    <field>
-      <type>comment</type>
-      <label type="str">&lt;p&gt;&lt;a href="{{ eservices_url }}backoffice/data/imio-ideabox-zone/add/" target="_blank" rel="noopener noreferrer nofollow"&gt;Ajouter une zone qui n&amp;#39;est pas dans liste&lt;/a&gt;&lt;/p&gt;
-</label>
-      <display_locations />
-      <id type="str">e0cd78c0-f2f6-48b6-895a-b69edb6c08cf</id>
     </field>
     <field>
       <type>string</type>
