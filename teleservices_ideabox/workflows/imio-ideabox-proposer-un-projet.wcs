@@ -117,7 +117,9 @@ Votre projet num&#233;ro {{ form_number }} - {{ form_var_nom }} a &#233;t&#233; 
           <subject>Votre proposition de projet - {{ form_number }} - {{ form_var_nom }}</subject>
           <body>Bonjour,
 
-Votre projet num&#233;ro {{ form_number }} - {{ form_var_nom }} a &#233;t&#233; accept&#233;. Il sera bient&#244;t publi&#233; sur le site de la commune.</body>
+Votre projet num&#233;ro {{ form_number }} - {{ form_var_nom }} a &#233;t&#233; accept&#233;. Il sera bient&#244;t publi&#233; sur le site de la commune.
+
+{{ ideabox_url_smartweb }}</body>
         </item>
         <item type="jump" id="2">
           <status>6</status>
