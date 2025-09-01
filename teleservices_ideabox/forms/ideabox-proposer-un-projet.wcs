@@ -626,6 +626,18 @@
       <anonymise type="str">final</anonymise>
       <id type="str">6efe0f27-48ad-4dd9-bf9e-27cde43ff715</id>
     </field>
+    <field>
+      <type>bool</type>
+      <label type="str">En validant mon projet, j&#8217;ai pris connaissance du r&#232;glement de campagne de l&#8217;administration communale</label>
+      <required type="str">required</required>
+      <varname type="str">validation_reglement</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">no</anonymise>
+      <id type="str">b0acb1cd-1fbe-43e1-9eed-4eaa0404aa1b</id>
+    </field>
   </fields>
   <user-roles>
     <role role_id="logged-users">logged-users</role>
