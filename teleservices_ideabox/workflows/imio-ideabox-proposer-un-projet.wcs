@@ -109,7 +109,7 @@
 
 Votre projet num&#233;ro {{ form_number }} - {{ form_var_nom }} a &#233;t&#233; refus&#233;
 
-{{ form_links_projet_form_workflow_data_refus_var_motif }}</body>
+{{ form_links_projet_form_workflow_form_refus_var_motif }}</body>
         </item>
       </items>
     </status>

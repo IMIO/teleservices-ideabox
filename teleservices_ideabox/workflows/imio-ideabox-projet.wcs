@@ -84,16 +84,6 @@
       <colour>#FFFFFF</colour>
       <visibility />
       <items>
-        <item type="choice" id="1">
-          <label>Envoyer la notifiaction de refus</label>
-          <by>
-            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
-          </by>
-          <status>0</status>
-          <require_confirmation>False</require_confirmation>
-          <ignore_form_errors>False</ignore_form_errors>
-          <set_marker_on_status>False</set_marker_on_status>
-        </item>
         <item type="form" id="2">
           <by>
             <item role_id="_gestion-des-projets">_gestion-des-projets</item>
@@ -114,6 +104,16 @@
               </field>
             </fields>
           </formdef>
+        </item>
+        <item type="choice" id="1">
+          <label>Envoyer la notifiaction de refus</label>
+          <by>
+            <item role_id="_gestion-des-projets">_gestion-des-projets</item>
+          </by>
+          <status>0</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
         </item>
         <item type="set-backoffice-fields" id="3">
           <fields>
